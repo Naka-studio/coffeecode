@@ -1,0 +1,46 @@
+name: Build CoffeeCode APK
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build web assets
+        run: npm run build
+
+      - name: Install Cordova
+        run: npm install -g cordova
+
+      - name: Add Android platform
+        run: cordova platform add android
+
+      - name: Build APK
+        run: cordova build android --release
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: CoffeeCode-APK
+          path: platforms/android/app/build/outputs/apk/release/*.apk
