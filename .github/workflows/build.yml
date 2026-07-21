@@ -59,7 +59,7 @@ jobs:
             platforms/android/app/build/outputs/apk/release/CoffeeCode.apk
 
       - name: Upload APK
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: CoffeeCode-APK
           path: platforms/android/app/build/outputs/apk/release/CoffeeCode.apk
