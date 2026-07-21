@@ -37,7 +37,7 @@ jobs:
         run: cordova platform add android
 
       - name: Build APK
-        run: cordova build android --release
+        run: cordova build android --release -- --packageType=apk
 
       - name: Find APK
         run: find platforms -name "*.apk" 2>/dev/null || echo "No APK found"
