@@ -36,14 +36,30 @@ jobs:
       - name: Add Android platform
         run: cordova platform add android
 
+      - name: Decode Keystore
+        run: echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 -d > ~/coffeecode.keystore
+
       - name: Build APK
         run: cordova build android --release -- --packageType=apk
 
-      - name: Find APK
-        run: find platforms -name "*.apk" 2>/dev/null || echo "No APK found"
+      - name: Sign APK
+        run: |
+          jarsigner -verbose \
+            -sigalg SHA256withRSA \
+            -digestalg SHA-256 \
+            -keystore ~/coffeecode.keystore \
+            -storepass ${{ secrets.KEYSTORE_PASSWORD }} \
+            platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk \
+            ${{ secrets.KEY_ALIAS }}
+
+      - name: Zipalign APK
+        run: |
+          $ANDROID_HOME/build-tools/$(ls $ANDROID_HOME/build-tools | tail -1)/zipalign -v 4 \
+            platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk \
+            platforms/android/app/build/outputs/apk/release/CoffeeCode.apk
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: CoffeeCode-APK
-          path: platforms/android/app/build/outputs/apk/release/*.apk
+          path: platforms/android/app/build/outputs/apk/release/CoffeeCode.apk
