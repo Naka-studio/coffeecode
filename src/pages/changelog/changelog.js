@@ -14,9 +14,9 @@ import helpers from "utils/helpers";
 
 export default async function Changelog() {
 	const GITHUB_API_URL =
-		"https://api.github.com/repos/Acode-Foundation/Acode/releases";
+		"https://api.github.com/repos/Naka-studio/coffeecode/releases";
 	const CHANGELOG_FILE_URL =
-		"https://raw.githubusercontent.com/Acode-Foundation/Acode/main/CHANGELOG.md";
+		"https://raw.githubusercontent.com/Naka-studio/coffeecode/main/CHANGELOG.md";
 	const currentVersion = BuildInfo.version;
 
 	let selectedVersion = currentVersion;
@@ -152,11 +152,11 @@ export default async function Changelog() {
 
 	function renderChangelog(text) {
 		const md = markdownIt({ html: true, linkify: true });
-		const REPO_URL = "https://github.com/Acode-Foundation/Acode";
+		const REPO_URL = "https://github.com/Naka-studio/coffeecode";
 		let processedText = text
 			// Convert full PR URLs to #number format with links preserved in markdown
 			.replace(
-				/https:\/\/github\.com\/Acode-Foundation\/Acode\/pull\/(\d+)/g,
+				/https:\/\/github\.com\/Naka-studio\/coffeecode\/pull\/(\d+)/g,
 				`[#$1](${REPO_URL}/pull/$1)`,
 			)
 			// Convert existing #number references to links if they aren't already
