@@ -63,7 +63,7 @@ export default function AboutInclude() {
 			</div>
 
 			<div className="social-links">
-				<a href="mailto:apps@foxdebug.com" className="social-link">
+				<a href="mailto:bayanaka.real@gmail.com" className="social-link">
 					<div className="social-icon">
 						<span className="icon gmail"></span>
 					</div>

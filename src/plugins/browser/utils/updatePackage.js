@@ -4,11 +4,11 @@ const path = require("path");
 const configXML = path.resolve(__dirname, "../../../config.xml");
 const menuJava = path.resolve(
   __dirname,
-  "../../../platforms/android/app/src/main/java/com/foxdebug/browser/Menu.java"
+  "../../../platforms/android/app/src/main/java/com/bayanaka/browser/Menu.java"
 );
 const docProvider = path.resolve(
   __dirname,
-  "../../../platforms/android/app/src/main/java/com/foxdebug/acode/rk/exec/terminal/AlpineDocumentProvider.java"
+  "../../../platforms/android/app/src/main/java/com/bayanaka/coffeecode/rk/exec/terminal/AlpineDocumentProvider.java"
 );
 
 const repeatChar = (char, times) => char.repeat(times);
@@ -46,7 +46,7 @@ try {
   replaceImport(docProvider, appName);
   replaceImport(menuJava, appName);
 
-  const msg = `==== Changed package to com.foxdebug.${appName} ====`;
+  const msg = `==== Changed package to com.bayanaka.${appName} ====`;
 
   console.log("\n" + repeatChar("=", msg.length));
   console.log(msg);
