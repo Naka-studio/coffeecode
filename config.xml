@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.foxdebug.acode" android-versionCode="1001" version="1.12.6"
+<widget id="com.bayanaka.coffeecode" android-versionCode="1" version="0.1.0"
     xmlns="http://www.w3.org/ns/widgets"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>Acode</name>
+    <name>CoffeeCode</name>
     <description>
         Light weight code editor and web IDE for android.
     </description>
