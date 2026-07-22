@@ -1,4 +1,4 @@
-const BASE_URL = "https://acode.app";
+const BASE_URL = "https://github.com/Naka-studio/coffeecode";
 let hasPro = false;
 
 const config = {
@@ -38,13 +38,13 @@ const config = {
 	LOG_FILE_NAME: "Acode.log",
 
 	// Social Links
-	DOCS_URL: "https://docs.acode.app",
-	GITHUB_URL: "https://github.com/Acode-Foundation/Acode",
+	DOCS_URL: "https://github.com/Naka-studio/coffeecode/wiki",
+	GITHUB_URL: "https://github.com/Naka-studio/coffeecode",
 	TELEGRAM_URL: "https://t.me/bayanaka",
-	DISCORD_URL: "https://discord.gg/nDqZsh7Rqz",
-	TWITTER_URL: "https://x.com/foxbiz_io",
-	INSTAGRAM_URL: "https://www.instagram.com/foxbiz.io/",
-	FOXBIZ_URL: "https://foxbiz.io",
+	DISCORD_URL: "https://github.com/Naka-studio/coffeecode",
+	TWITTER_URL: "https://github.com/Naka-studio/coffeecode",
+	INSTAGRAM_URL: "https://github.com/Naka-studio/coffeecode",
+	BAYANAKA_URL: "https://github.com/Naka-studio/coffeecode",
 
 	get HAS_PRO() {
 		return hasPro;

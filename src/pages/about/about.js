@@ -17,7 +17,7 @@ export default function AboutInclude() {
 			<Logo />
 
 			<div className="version-info">
-				<h1 className="version-title">Acode editor</h1>
+				<h1 className="version-title">CoffeeCode</h1>
 				<div className="version-number">
 					Version {BuildInfo.version} ({BuildInfo.versionCode})
 				</div>
@@ -44,7 +44,7 @@ export default function AboutInclude() {
 				</a>
 				<a href={config.BASE_URL} className="info-item">
 					<div className="info-item-icon">
-						<span className="icon acode"></span>
+						<span className="icon coffeecode"></span>
 					</div>
 					<div className="info-item-text">
 						Official webpage
@@ -53,10 +53,10 @@ export default function AboutInclude() {
 				</a>
 				<a href={config.FOXBIZ_URL} className="info-item">
 					<div className="info-item-icon">
-						<span className="icon foxbiz"></span>
+						<span className="icon bayanaka"></span>
 					</div>
 					<div className="info-item-text">
-						Foxbiz Software Pvt. Ltd.
+						Bayanaka
 						<div className="info-item-subtext">{config.FOXBIZ_URL}</div>
 					</div>
 				</a>

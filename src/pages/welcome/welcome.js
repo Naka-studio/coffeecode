@@ -21,7 +21,7 @@ export default function openWelcomeTab() {
 		render: true,
 		type: "page",
 		content: welcomeContent,
-		tabIcon: "icon acode",
+		tabIcon: "icon coffeecode",
 		hideQuickTools: true,
 	});
 
@@ -46,8 +46,8 @@ function createWelcomeContent() {
 			<header className="welcome-header">
 				<img className="logo" src={logoSrc} width="48" height="48" alt="" />
 				<div className="welcome-header-text">
-					<h1>Welcome to Acode</h1>
-					<p className="tagline">Powerful code editor for Android</p>
+					<h1>Welcome to CoffeeCode</h1>
+					<p className="tagline">A powerful code editor, brewed for developers.</p>
 				</div>
 			</header>
 
@@ -136,7 +136,7 @@ function createWelcomeContent() {
 			<section className="welcome-section welcome-links">
 				<h2 className="section-label">CONNECT</h2>
 				<div className="link-row">
-					<LinkItem icon="acode" label="Website" url={config.BASE_URL} />
+					<LinkItem icon="coffeecode" label="Website" url={config.BASE_URL} />
 					<LinkItem icon="github" label="GitHub" url={config.GITHUB_URL} />
 					<LinkItem
 						icon="telegram"
