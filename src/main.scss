@@ -163,7 +163,7 @@ a {
     }
 
     &.active {
-      border-top: solid 2px var(--active-color);
+      border-bottom: solid 2px var(--active-color);
       background-color: rgba(0, 0, 0, 0.2);
     }
 
