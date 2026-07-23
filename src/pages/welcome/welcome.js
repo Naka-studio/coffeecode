@@ -44,7 +44,7 @@ function createWelcomeContent() {
 		<div id="welcome-tab" className="welcome-page scroll">
 			{/* Hero Section */}
 			<header className="welcome-header">
-				<img className="logo" src={logoSrc} width="48" height="48" alt="" />
+				<img className="logo" src={logoSrc} width="120" height="120" alt="" />
 				<div className="welcome-header-text">
 					<h1>Welcome to CoffeeCode</h1>
 					<p className="tagline">A powerful code editor, brewed for developers.</p>
