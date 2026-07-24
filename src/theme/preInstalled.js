@@ -230,6 +230,27 @@ light.scrollbarColor = "rgba(0, 0, 0, 0.2)";
 light.preferredEditorTheme = getSystemEditorTheme(false);
 light.preferredTerminalTheme = "light";
 
+const cfcode = createBuiltInTheme("CF Code", "dark", "free");
+cfcode.primaryColor = "rgb(34, 34, 34)";
+cfcode.darkenedPrimaryColor = "rgb(31, 31, 31)";
+cfcode.secondaryColor = "rgb(56, 56, 56)";
+cfcode.primaryTextColor = "rgb(212, 212, 212)";
+cfcode.secondaryTextColor = "rgb(157, 157, 157)";
+cfcode.activeColor = "rgb(0, 85, 204)";
+cfcode.activeIconColor = "rgba(0, 85, 204, 0.8)";
+cfcode.activeTextColor = "rgb(255, 255, 255)";
+cfcode.linkTextColor = "rgb(255, 180, 84)";
+cfcode.borderColor = "rgb(63, 63, 63)";
+cfcode.popupBackgroundColor = "rgb(31, 31, 31)";
+cfcode.popupTextColor = "rgb(212, 212, 212)";
+cfcode.popupIconColor = "rgb(212, 212, 212)";
+cfcode.popupActiveColor = "rgb(0, 85, 204)";
+cfcode.errorTextColor = "rgb(244, 71, 71)";
+cfcode.dangerColor = "rgb(244, 71, 71)";
+cfcode.scrollbarColor = "rgba(173, 173, 173, 0.2)";
+cfcode.preferredEditorTheme = "tokyoNight";
+cfcode.preferredTerminalTheme = "dark";
+
 const system = createBuiltInTheme("System", "dark", "free");
 
 export function getSystemEditorTheme(darkTheme) {
@@ -551,6 +572,7 @@ export default [
 	system,
 	createBuiltInTheme("Legacy", "dark", "free"),
 	dark,
+	cfcode,
 	light,
 	glass,
 	glassDark,

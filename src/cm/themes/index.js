@@ -24,6 +24,7 @@ import tomorrowNightBright, {
 	config as tomorrowNightBrightConfig,
 } from "./tomorrowNightBright";
 import vscodeDark, { config as vscodeDarkConfig } from "./vscodeDark";
+import bayanakaDark, { config as bayanakaDarkConfig } from "./bayanakaDark";
 
 const oneDarkConfig = {
 	name: "one_dark",
@@ -274,6 +275,13 @@ addTheme(
 	!!vscodeDarkConfig.dark,
 	() => vscodeDark(),
 	vscodeDarkConfig,
+);
+addTheme(
+    bayanakaDarkConfig.name,
+    "Bayanaka Dark",
+    !!bayanakaDarkConfig.dark,
+    () => bayanakaDark(),
+    bayanakaDarkConfig,
 );
 
 export default {
