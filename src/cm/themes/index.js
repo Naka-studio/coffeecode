@@ -24,7 +24,7 @@ import tomorrowNightBright, {
 	config as tomorrowNightBrightConfig,
 } from "./tomorrowNightBright";
 import vscodeDark, { config as vscodeDarkConfig } from "./vscodeDark";
-import bayanakaDark, { config as bayanakaDarkConfig } from "./bayanakaDark";
+import cfcodeDefault, { config as cfcodeDefaultConfig } from "./cfcodedefault";
 
 const oneDarkConfig = {
 	name: "one_dark",
@@ -277,11 +277,11 @@ addTheme(
 	vscodeDarkConfig,
 );
 addTheme(
-    bayanakaDarkConfig.name,
-    "Bayanaka Dark",
-    !!bayanakaDarkConfig.dark,
-    () => bayanakaDark(),
-    bayanakaDarkConfig,
+    cfcodeDefaultConfig.name,
+    "CF Code (Default)",
+    !!cfcodeDefaultConfig.dark,
+    () => cfcodeDefault(),
+    cfcodeDefaultConfig,
 );
 
 export default {

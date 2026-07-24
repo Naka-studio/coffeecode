@@ -4,23 +4,25 @@ import { apply } from "./list";
 
 const WHITE = "rgb(255, 255, 255)";
 
-const dark = createBuiltInTheme("Dark", "dark", "free");
-dark.primaryColor = "rgb(35, 39, 42)";
-dark.primaryTextColor = "rgb(245, 245, 245)";
-dark.secondaryColor = "rgb(45, 49, 52)";
-dark.secondaryTextColor = "rgb(228, 228, 228)";
-dark.activeColor = "rgb(66, 133, 244)";
-dark.linkTextColor = "rgb(138, 180, 248)";
-dark.borderColor = "rgba(188, 188, 188, 0.15)";
-dark.popupIconColor = "rgb(245, 245, 245)";
-dark.popupBackgroundColor = "rgb(35, 39, 42)";
-dark.popupTextColor = "rgb(245, 245, 245)";
-dark.popupActiveColor = "rgb(66, 133, 244)";
+const dark = createBuiltInTheme("CF Code (Default)", "dark", "free");
+dark.primaryColor = "rgb(34, 34, 34)";
+dark.darkenedPrimaryColor = "rgb(31, 31, 31)";
+dark.secondaryColor = "rgb(56, 56, 56)";
+dark.primaryTextColor = "rgb(212, 212, 212)";
+dark.secondaryTextColor = "rgb(157, 157, 157)";
+dark.activeColor = "rgb(0, 85, 204)";
+dark.activeIconColor = "rgba(0, 85, 204, 0.8)";
 dark.activeTextColor = "rgb(255, 255, 255)";
-dark.errorTextColor = "rgb(255, 185, 92)";
-dark.dangerColor = "rgb(220, 38, 38)";
-dark.scrollbarColor = "rgba(255, 255, 255, 0.2)";
-dark.preferredEditorTheme = getSystemEditorTheme(true);
+dark.linkTextColor = "rgb(255, 180, 84)";
+dark.borderColor = "rgb(63, 63, 63)";
+dark.popupBackgroundColor = "rgb(31, 31, 31)";
+dark.popupTextColor = "rgb(212, 212, 212)";
+dark.popupIconColor = "rgb(212, 212, 212)";
+dark.popupActiveColor = "rgb(0, 85, 204)";
+dark.errorTextColor = "rgb(244, 71, 71)";
+dark.dangerColor = "rgb(244, 71, 71)";
+dark.scrollbarColor = "rgba(173, 173, 173, 0.2)";
+dark.preferredEditorTheme = "cfcodeDefault";
 dark.preferredTerminalTheme = "dark";
 
 const oled = createBuiltInTheme("OLED");
@@ -230,32 +232,11 @@ light.scrollbarColor = "rgba(0, 0, 0, 0.2)";
 light.preferredEditorTheme = getSystemEditorTheme(false);
 light.preferredTerminalTheme = "light";
 
-const cfcode = createBuiltInTheme("CF Code", "dark", "free");
-cfcode.primaryColor = "rgb(34, 34, 34)";
-cfcode.darkenedPrimaryColor = "rgb(31, 31, 31)";
-cfcode.secondaryColor = "rgb(56, 56, 56)";
-cfcode.primaryTextColor = "rgb(212, 212, 212)";
-cfcode.secondaryTextColor = "rgb(157, 157, 157)";
-cfcode.activeColor = "rgb(0, 85, 204)";
-cfcode.activeIconColor = "rgba(0, 85, 204, 0.8)";
-cfcode.activeTextColor = "rgb(255, 255, 255)";
-cfcode.linkTextColor = "rgb(255, 180, 84)";
-cfcode.borderColor = "rgb(63, 63, 63)";
-cfcode.popupBackgroundColor = "rgb(31, 31, 31)";
-cfcode.popupTextColor = "rgb(212, 212, 212)";
-cfcode.popupIconColor = "rgb(212, 212, 212)";
-cfcode.popupActiveColor = "rgb(0, 85, 204)";
-cfcode.errorTextColor = "rgb(244, 71, 71)";
-cfcode.dangerColor = "rgb(244, 71, 71)";
-cfcode.scrollbarColor = "rgba(173, 173, 173, 0.2)";
-cfcode.preferredEditorTheme = "tokyoNight";
-cfcode.preferredTerminalTheme = "dark";
-
 const system = createBuiltInTheme("System", "dark", "free");
 
 export function getSystemEditorTheme(darkTheme) {
 	if (darkTheme) {
-		return "one_dark";
+		return "cfcodeDefault";
 	} else {
 		return "noctisLilac";
 	}
@@ -267,20 +248,18 @@ export function getSystemEditorTheme(darkTheme) {
  */
 export function updateSystemTheme(darkTheme) {
 	if (darkTheme) {
-		system.type = "dark";
-		system.primaryColor = "rgb(35, 39, 42)";
-		system.primaryTextColor = "rgb(245, 245, 245)";
-		system.darkenedPrimaryColor = "rgb(24, 27, 30)";
-		system.secondaryColor = "rgb(45, 49, 52)";
-		system.secondaryTextColor = "rgb(228, 228, 228)";
-		system.activeColor = "rgb(66, 133, 244)";
-		system.linkTextColor = "rgb(138, 180, 248)";
-		system.borderColor = "rgba(188, 188, 188, 0.15)";
-		system.popupIconColor = "rgb(245, 245, 245)";
-
-		system.popupBackgroundColor = "rgb(35, 39, 42)";
-		system.popupTextColor = "rgb(245, 245, 245)";
-		system.popupActiveColor = "rgb(66, 133, 244)";
+		system.primaryColor = "rgb(34, 34, 34)";
+		system.darkenedPrimaryColor = "rgb(31, 31, 31)";
+		system.secondaryColor = "rgb(56, 56, 56)";
+		system.primaryTextColor = "rgb(212, 212, 212)";
+		system.secondaryTextColor = "rgb(157, 157, 157)";
+		system.activeColor = "rgb(0, 85, 204)";
+		system.linkTextColor = "rgb(255, 180, 84)";
+		system.borderColor = "rgb(63, 63, 63)";
+		system.popupIconColor = "rgb(212, 212, 212)";
+		system.popupBackgroundColor = "rgb(31, 31, 31)";
+		system.popupTextColor = "rgb(212, 212, 212)";
+		system.popupActiveColor = "rgb(0, 85, 204)";
 	} else {
 		system.type = "light";
 		system.primaryColor = "rgb(255, 255, 255)";
@@ -572,7 +551,6 @@ export default [
 	system,
 	createBuiltInTheme("Legacy", "dark", "free"),
 	dark,
-	cfcode,
 	light,
 	glass,
 	glassDark,
