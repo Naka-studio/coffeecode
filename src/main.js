@@ -534,7 +534,7 @@ async function loadApp() {
 	);
 	const $header = tile({
 		type: "header",
-		text: "Acode",
+		text: "CF Code",
 		lead: $navToggler,
 		tail: $menuToggler,
 	});
