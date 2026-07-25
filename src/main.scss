@@ -808,3 +808,48 @@ h4 { font-size: var(--text-h4); line-height: var(--lh-h4); }
 body { font-size: var(--text-body); line-height: var(--lh-body); }
 small, .caption { font-size: var(--text-caption); line-height: var(--lh-caption); }
 code, pre { font-size: var(--text-code); line-height: var(--lh-code); }
+
+/* CF Code Button System */
+:root {
+  --btn-primary-bg: #0055CC;
+  --btn-primary-text: #FFFFFF;
+  --btn-primary-hover: #0047AD;
+
+  --btn-secondary-bg: #383838;
+  --btn-secondary-text: #D4D4D4;
+  --btn-secondary-hover: #444444;
+
+  --btn-border-radius: 4px;
+  --btn-padding: 6px 12px;
+  --btn-font-size: var(--text-body);
+}
+
+/* CF Code Spacing System */
+:root {
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+}
+
+/* CF Code Border Radius */
+:root {
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-full: 9999px;
+}
+
+/* CF Code Elevation / Shadow */
+:root {
+  --shadow-sm: 0 1px 4px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
+  --shadow-xl: 0 16px 40px rgba(0, 0, 0, 0.6);
+}
