@@ -24,6 +24,7 @@ dark.dangerColor = "rgb(244, 71, 71)";
 dark.scrollbarColor = "rgba(173, 173, 173, 0.2)";
 dark.preferredEditorTheme = "cfcodeDefault";
 dark.preferredTerminalTheme = "dark";
+dark.preferredFont = "Fira Code";
 
 const oled = createBuiltInTheme("OLED");
 oled.primaryColor = "rgb(0, 0, 0)";

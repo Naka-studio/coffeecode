@@ -2,6 +2,8 @@ import fsOperation from "fileSystem";
 import loader from "dialogs/loader";
 import helpers from "utils/helpers";
 import Url from "utils/Url";
+import inter from "../res/fonts/Inter.ttf";
+import cascadiaCode from "../res/fonts/CascadiaCode.ttf";
 import firaCode from "../res/fonts/FiraCode.ttf";
 import MesloLGSNFRegular from "../res/fonts/MesloLGSNFRegular.ttf";
 import robotoMono from "../res/fonts/RobotoMono.ttf";
@@ -12,8 +14,28 @@ const CUSTOM_FONTS_KEY = "custom_fonts";
 const FONT_FACE_STYLE_ID = "font-face-style";
 const EDITOR_STYLE_ID = "editor-font-style";
 const APP_STYLE_ID = "app-font-style";
-const DEFAULT_EDITOR_FONT = "Roboto Mono";
-const DEFAULT_APP_FONT_STACK = `"Roboto", sans-serif`;
+const DEFAULT_EDITOR_FONT = "Fira Code";
+const DEFAULT_APP_FONT_STACK = `"Inter", sans-serif`;
+
+add(
+    "Inter",
+    `@font-face {
+  font-family: 'Inter';
+  src: url(${inter}) format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+}`,
+);
+
+add(
+    "Cascadia Code",
+    `@font-face {
+  font-family: 'Cascadia Code';
+  src: url(${cascadiaCode}) format('truetype');
+  font-weight: 200 700;
+  font-style: normal;
+}`,
+);
 
 add(
 	"Fira Code",
