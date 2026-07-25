@@ -8,8 +8,10 @@
 @use "./styles/notification.scss";
 
 :root {
+  --heading-font-family: "Cascadia Code", monospace;
+  --code-font-family: "Fira Code", monospace;
   --scrollbar-width: 4px;
-  --app-font-family: "Roboto", sans-serif;
+  --app-font-family: "Inter", sans-serif;
 }
 
 * {
@@ -771,3 +773,11 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 
 
+
+/* CF Code Typography */
+h1, h2, h3, h4, h5, h6,
+.page-title,
+.header-title,
+.section-title {
+  font-family: var(--heading-font-family);
+}
