@@ -1,0 +1,74 @@
+.cf-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: none;
+  cursor: pointer;
+  font-family: var(--app-font-family);
+  font-size: var(--text-body);
+  border-radius: var(--btn-border-radius);
+  padding: var(--btn-padding);
+  transition: background 0.2s ease, opacity 0.2s ease;
+  user-select: none;
+
+  &:active {
+    opacity: 0.8;
+  }
+
+  &:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+
+  /* Primary */
+  &.cf-btn-primary {
+    background: var(--btn-primary-bg);
+    color: var(--btn-primary-text);
+
+    &:hover {
+      background: var(--btn-primary-hover);
+    }
+  }
+
+  /* Secondary */
+  &.cf-btn-secondary {
+    background: var(--btn-secondary-bg);
+    color: var(--btn-secondary-text);
+
+    &:hover {
+      background: var(--btn-secondary-hover);
+    }
+  }
+
+  /* Icon button */
+  &.cf-btn-icon {
+    background: transparent;
+    color: var(--btn-secondary-text);
+    padding: 6px;
+    border-radius: 50%;
+
+    &:hover {
+      background: var(--btn-secondary-bg);
+    }
+  }
+
+
+	/* Disabled */
+  &:disabled {
+    background: #2A2A2A;
+    color: #6B6B6B;
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  /* Danger */
+  &.cf-btn-danger {
+    background: #3F1F1F;
+    color: #F44747;
+
+    &:hover {
+      background: #5A1F1F;
+    }
+	}
+}
