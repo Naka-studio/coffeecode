@@ -7,8 +7,8 @@
     <description>
         Light weight code editor and web IDE for android.
     </description>
-    <author email="ajit@foxdebug.com" href="https://foxdebug.com">
-        Foxdebug
+    <author email="bayanaka.real@gmail.com" href="https://github.com/Naka-studio">
+        Naka Studio
     </author>
     <content src="index.html" />
     <access launch-external="yes" origin="*" />
@@ -71,7 +71,7 @@
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="acode" />
+                <data android:scheme="coffeecode" />
             </intent-filter>
         </config-file>
 

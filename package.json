@@ -1,8 +1,8 @@
 {
-  "name": "com.foxdebug.acode",
-  "displayName": "Acode",
-  "version": "1.12.3",
-  "description": "Acode is a code editor for android",
+  "name": "com.bayanaka.coffeecode",
+  "displayName": "CF Code",
+  "version": "0.1.0",
+  "description": "A Powerful Code Editor, Brewed for Developers.",
   "scripts": {
     "lang": "node ./utils/lang.js",
     "build": "sh utils/scripts/build.sh",
@@ -21,7 +21,7 @@
   "keywords": [
     "ecosystem:cordova"
   ],
-  "author": "Foxdebug (Ajit Kumar)",
+  "author": "Naka Studio (Bayanaka)",
   "license": "MIT",
   "cordova": {
     "plugins": {
@@ -51,12 +51,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deadlyjack/acode.git"
+    "url": "git+https://github.com/Naka-studi/coffeecode.git"
   },
   "bugs": {
-    "url": "https://github.com/deadlyjack/acode/issues"
+    "url": "https://github.com/Naka-studio/coffeecode/issues"
   },
-  "homepage": "https://github.com/deadlyjack/acode#readme",
+  "homepage": "https://github.com/Naka-studio/coffeecode#readme",
   "devDependencies": {
     "@babel/core": "^8.0.1",
     "@babel/generator": "^7.29.1",
