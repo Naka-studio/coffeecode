@@ -3,6 +3,9 @@ import "html-tag-js/dist/polyfill";
 
 import "./main.scss";
 import "res/icons/style.css";
+import "res/icons/codicon.css";
+import "res/icons/cfcode-icons.css";
+import "res/icons/icon-override.css";
 import "res/file-icons/style.css";
 import "styles/overrideAceStyle.scss";
 import "styles/wideScreen.scss";
