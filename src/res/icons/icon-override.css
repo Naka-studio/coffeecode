@@ -588,7 +588,7 @@
 	content: '\eaf7';
 }
 
-.icon.library_active::before{
+.icon.active_library::before{
   font-family: "codicon";
 	content: '\ebdf';
 }
