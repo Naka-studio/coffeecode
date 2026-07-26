@@ -180,6 +180,11 @@
 	content: '\eb1a';         /* <------ harus dibenahi */
 }
 
+.icon.save::before{
+  font-family: "codicon";
+	content: '\eb4b';
+}
+
 .icon.save_alt::before,
 .icon.install::before{
   font-family: "codicon";
@@ -196,6 +201,15 @@
 .icon.settings_gear::before{
   font-family: "codicon";
 	content: '\eb51';
+}
+.icon.spellcheck::before{
+  font-family: "codicon";
+	content: '\ebd1';
+}
+
+.icon.help::before{
+  font-family: "codicon";
+	content: '\eb32';
 }
 
 .icon.tune::before,
@@ -225,7 +239,7 @@
 
 .icon.apps::before{
   font-family: "codicon";
-	content: '\eb2a';
+	content: '\eba2';
 }
 
 .icon.attach_file::before{
@@ -572,6 +586,11 @@
 .icon.folder_open::before{
   font-family: "codicon";
 	content: '\eaf7';
+}
+
+.icon.library_active::before{
+  font-family: "codicon";
+	content: '\ebdf';
 }
 
 .icon.save_as::before{
