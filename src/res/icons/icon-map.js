@@ -16,7 +16,7 @@ export const iconMap = {
 	"document-add": "document_add",
 	"document-error": "document_error",
 	"document-remove": "document_remove",
-	"document-text-outline": "document_text_outline"
+	"document-text-outline": "document_text_outline",
 	"file_downloadget_app": "download",
 	"first_page": "close_left",
 	"folder-add": "folder_add",
@@ -79,7 +79,7 @@ export const keepIcons = [
 	"keyboard_arrow_up",
 	"lightbulb",
 	"like",
-	"like_solid"
+	"like_solid",
 	"logout",
 	"paste",
 	"person",

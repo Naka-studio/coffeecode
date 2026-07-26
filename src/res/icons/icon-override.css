@@ -237,7 +237,7 @@
 }
 
 .icon.tune::before,
-.icon.settings_tune{
+.icon.settings_tune::before{
   font-family: "codicon";
 	content: '\eb52';
 }
@@ -426,7 +426,7 @@
 	content: '\eb06';    /* <----------- Isinya Sama Hati-hati */
 }
 
-.icon.image::efore{
+.icon.image::before{
   font-family: "cfcode-icons";
 	content: '\f005';
 }
