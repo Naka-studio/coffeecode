@@ -54,7 +54,7 @@ body.no-animation {
     width: 52px;
     min-width: 52px;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.15);
+    background-color: var(--bg-darker);
     padding: 0;
     display: flex;
     flex-direction: column;
@@ -91,7 +91,7 @@ body.no-animation {
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: rgba(0, 0, 0, 0.1);
+      background-color: var(--bg-darker);
       border-top: 1px solid rgba(255, 255, 255, 0.08);
 
       .avatar {
@@ -152,8 +152,8 @@ body.no-animation {
       min-height: 40px;
       color: currentColor;
       font-size: 1.3em;
-      border-radius: 10px;
-      opacity: 0.55;
+      border-radius: var(--radius-md);
+      opacity: 0.6;
       transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
       margin: 0 auto;
       cursor: pointer;
@@ -184,7 +184,7 @@ body.no-animation {
 
       &.active {
         opacity: 1;
-        background-color: rgba(255, 255, 255, 0.12);
+        background-color: var(--btn-secondary-bg);
 
         &::after {
           transform: translateY(-50%) scaleY(1);
