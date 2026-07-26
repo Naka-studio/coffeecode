@@ -1,4 +1,12 @@
 @font-face {
+  font-family: 'cfcode-icons';
+  src: url('./cfcode-icons.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
   font-family: "code-editor-icon";
   src: url("icons.ttf?v3") format("truetype");
   font-weight: normal;
@@ -932,3 +940,4 @@
 .icon.all_inclusive:before {
   content: "\ea18";
 }
+@import "./cfcode-icons.css";
