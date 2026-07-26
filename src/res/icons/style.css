@@ -13,6 +13,12 @@
   font-style: normal;
   font-display: block;
 }
+
+/* ... semua class acode ... */
+@import "./cfcode-icons.css";
+@import "./codicon.css";
+@import "./icon-override.css";  /* satu aja, paling bawah */
+
 .icon,
 [class^="icon-"],
 [class*=" icon-"] {
@@ -940,7 +946,3 @@
 .icon.all_inclusive:before {
   content: "\ea18";
 }
-/* ... semua class acode ... */
-@import "./cfcode-icons.css";
-@import "./codicon.css";
-@import "./icon-override.css";  /* satu aja, paling bawah */
