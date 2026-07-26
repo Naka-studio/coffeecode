@@ -1,0 +1,633 @@
+@font-face {
+  font-family: 'cfcode-icons';
+  src: url('cfcode-icons.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "code-editor-icon";
+  src: url("icons.ttf?v3") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: "codicon";
+  src: url("codicon.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+.icon,
+[class^="icon-"],
+[class*=" icon-"] {
+  /* Use !important to prevent extensions from overriding this font. */
+  font-family: "code-editor-icon";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* List Of Icons */
+
+
+/* Override Icon Class =====================================================================*/
+.icon.account_circle::before,
+.icon.user_circle::before{
+	font-family: "codicon";
+	content: '\eb99';
+}
+
+.icon.add_photo_alternate::before,
+.icon.add_image::before{
+	font-family: "cfcode-icons";
+	content: '\f005';
+}
+
+.icon.arrow_back::before,
+.icon.step_back::before{
+	font-family: "codicon";
+	content: '\ea9b';
+}
+
+.icon.autorenew::before,
+.icon.recycle::before{
+	font-family: "codicon";
+	content: '\ea77';
+}
+
+.icon.bayanaka::before,
+.icon.nakaStudio::before{
+	font-family: "cfcode-icons";
+	content: '\f002';
+}
+
+.icon.chat_bubble::before,
+.icon.comment::before{
+	font-family: "codicon";
+	content: '\eac7';
+}
+
+.icon.clearclose::before,
+.icon.close::before{
+	font-family: "codicon";
+	content: '\ea76';
+}
+
+.icon.code::before,
+.icon.console::before{
+	font-family: "codicon";
+	content: '\eb9b';
+}
+
+.icon.coffeecode::before,
+.icon.cfCode::before{
+	font-family: "cfcode-icons";
+	content: '\f00a';
+}
+
+.icon.color_lenspalette::before,
+.icon.color_palette::before{
+	font-family: "codicon";
+	content: '\eb5c';
+}
+
+.icon.palette::before,
+.icon.color_palette_outline::before{
+	font-family: "codicon";
+	content: '\eb5c';
+}
+
+.icon.colorize::before,
+.icon.color_picker::before{
+	font-family: "codicon";
+	content: '\ec51';			/* <------ harus dibenahi */
+}
+
+.icon.compare_arrows::before,
+.icon.close_others::before{
+	font-family: "codicon";
+	content: '\eac1';
+}
+
+.icon.document-add::before,
+.icon.document_add::before{
+	font-family: "codicon";
+	content: '\ea7f';
+}
+
+.icon.document-error::before,
+.icon.document_error::before{
+	font-family: "codicon";
+	content: '\eae8';			/* <------ harus dibenahi */
+}
+
+.icon.document-remove::before,
+.icon.document_remove::before{
+  font-family: "codicon";
+	content: '\ea81';      /* <-----++ sementara */
+}
+
+.icon.document-text-outline::before,
+.icon.document_text_outline::before{
+	font-family: "codicon";
+	content: '\ec5e';
+}
+
+.icon.file_downloadget_app::before,
+.icon.download::before{
+	font-family: "codicon";
+	content: '\ec74';
+}
+
+.icon.first_page::before,
+.icon.close_left::before{
+	font-family: "codicon";
+	content: '\ec4b';
+}
+
+.icon.folder-add::before,
+.icon.folder_add::before{
+  font-family: "codicon";
+	content: '\ea80';
+}
+
+.icon.folder-remove::before,
+.icon.folder_remove::before{
+  font-family: "codicon";
+	content: '\ea81';        /* <---------- sementara aja*/
+}
+
+.icon.funnel::before,
+.icon.filter::before{
+	font-family: "codicon";
+	content: '\eaf1';
+}
+
+.icon.filter_filled::before{
+	font-family: "codicon";
+	content: '\ebce';
+}
+.icon.historyrestore::before,
+.icon.history::before{
+	font-family: "codicon";
+	content: '\ea82';
+}
+
+.icon.last_page::before,
+.icon.close_right::before{
+  font-family: "codicon";
+	content: '\ec4a';
+}
+
+.icon.linkinsert_link::before,
+.icon.insert_link::before{
+  font-family: "codicon";
+	content: '\eb15';
+}
+
+.icon.menu::before,
+.icon.humberger_menu::before{
+  font-family: "codicon";
+	content: '\eb94';
+}
+
+.icon.more_vert::before,
+.icon.option::before{
+  font-family: "codicon";
+	content: '\eb10';
+}
+
+.icon.play_arrow::before,
+.icon.run::before{
+  font-family: "codicon";
+	content: '\eb2c';
+}
+
+.icon.power_settings_new::before,
+.icon.cf_power::before{
+  font-family: "codicon";
+	content: '\eb1a';         /* <------ harus dibenahi */
+}
+
+.icon.save_alt::before,
+.icon.install::before{
+  font-family: "codicon";
+	content: '\ec74';
+}
+
+.icon.scale::before,
+.icon.license::before{
+  font-family: "codicon";
+	content: '\eb12';
+}
+
+.icon.settings::before,
+.icon.settings_gear::before{
+  font-family: "codicon";
+	content: '\eb51';
+}
+
+.icon.tune::before,
+.icon.settings_tune{
+  font-family: "codicon";
+	content: '\eb52';
+}
+
+.icon.warningreport_problem::before,
+.icon.report_problem::before{
+  font-family: "codicon";
+	content: '\eb42';
+}
+
+.icon.zap::before,
+.icon.lightning::before{
+  font-family: "codicon";
+	content: '\ea86';
+}
+
+
+/* Keep Icon Class ==========================================================================*/
+.icon.add::before{
+  font-family: "codicon";
+	content: '\ea60';
+}
+
+.icon.apps::before{
+  font-family: "codicon";
+	content: '\eb2a';
+}
+
+.icon.attach_file::before{
+  font-family: "codicon";
+	content: '\ec34';
+}
+
+.icon.cached::before{
+  font-family: "codicon";
+	content: '\ea98';
+}
+
+/* .icon.cart::before{
+  font-family: "codicon";
+  content: '\';
+} */
+
+.icon.check::before{
+  font-family: "codicon";
+	content: '\eab2';
+}
+
+/* .icon.check_circle::before{
+  font-family: "codicon";
+  content: '\';
+} */
+
+.icon.cloud::before{
+  font-family: "codicon";
+	content: '\ebaa';
+}
+
+/* .icon.cloud_done::before{
+  font-family: "codicon";
+  content: '\';
+} */
+
+.icon.cloud_download::before{
+  font-family: "codicon";
+	content: '\eac2';
+}
+
+.icon.cloud_uploadbackup::before{
+  font-family: "codicon";
+	content: '\eac3';
+}
+
+.icon.copy::before{
+  font-family: "codicon";
+	content: '\ebcc';
+}
+
+.icon.cut::before{
+  font-family: "codicon";
+	content: '\ec7f';
+}
+
+.icon.delete::before{
+  font-family: "codicon";
+	content: '\ea81';
+}
+
+.icon.delete_outline::before{
+  font-family: "codicon";
+	content: '\ead0';      /* <---- Sememntara karena untuk icon unistalll plugins*/
+}
+
+/* .icon.discord::before{
+  font-family: "codicon";
+  content: '\';
+} */
+
+.icon.documents::before{
+  font-family: "codicon";
+	content: '\ebdf';
+}
+
+.icon.edit::before{
+  font-family: "codicon";
+	content: '\ea73';
+}
+
+.icon.error::before{
+  font-family: "codicon";
+	content: '\ea6c';
+}
+
+/* .icon.error_outline::before{
+  font-family: "codicon";
+  content: '\';
+} */
+
+.icon.expand_less::before{
+  font-family: "codicon";
+	content: '\eaf5';
+}
+
+.icon.expand_more::before{
+  font-family: "codicon";
+	content: '\eb73';
+}
+
+.icon.extension::before{
+  font-family: "codicon";
+	content: '\ec48';
+}
+
+.icon.favorite::before{
+  font-family: "codicon";
+	content: '\ec15';
+}
+
+.icon.file::before{
+  font-family: "codicon";
+	content: '\ea7b';
+}
+
+.icon.file_copy::before{
+  font-family: "codicon";
+	content: '\eaf0';
+}
+
+.icon.folder::before{
+  font-family: "codicon";
+	content: '\ea83';
+}
+
+.icon.fullscreen::before{
+  font-family: "codicon";
+	content: '\eb4c';
+}
+
+/* .icon.github::before{
+  font-family: "codicon";
+  content: '\';
+} */
+
+/* .icon.gmail::before{
+  font-family: "codicon";
+  content: '\';
+} */
+
+/* .icon.googlechrome::before{
+  font-family: "codicon";
+  content: '\';
+} */
+
+.icon.house::before{
+  font-family: "codicon";
+	content: '\eb06';
+}
+
+.icon.home::before{
+  font-family: "codicon";
+	content: '\eb06';      /* <----------- Isinya Sama Hati-hati */
+}
+
+.icon.home_filled::before{
+  font-family: "codicon";
+	content: '\eb06';    /* <----------- Isinya Sama Hati-hati */
+}
+
+.icon.image::efore{
+  font-family: "cfcode-icons";
+	content: '\f005';
+}
+
+.icon.info::before{
+  font-family: "codicon";
+	content: '\ea74';
+}
+
+.icon.info_outline::before{
+  font-family: "codicon";
+	content: '\ea74';    /* <----------- Isinya Sama Hati-hati */
+}
+
+.icon.instagram::before{
+  font-family: "cfcode-icons";
+	content: '\f004';
+}
+
+.icon.keyboard_arrow_down::before{
+  font-family: "codicon";
+	content: '\eab4';
+}
+
+.icon.keyboard_arrow_left::before{
+  font-family: "codicon";
+	content: '\eab5';
+}
+
+.icon.keyboard_arrow_right::before{
+  font-family: "codicon";
+	content: '\eab6';
+}
+
+.icon.keyboard_arrow_up::before{
+  font-family: "codicon";
+	content: '\eab7';
+}
+
+.icon.lightbulb::before{
+  font-family: "codicon";
+	content: '\ec1f';
+}
+
+.icon.like::before{
+  font-family: "codicon";
+	content: '\eb6c';
+}
+
+.icon.like_solid::before{
+  font-family: "codicon";
+	content: '\ec14';
+}
+
+.icon.loader::before{
+  font-family: "codicon";
+	content: '\ec77';
+}
+
+.icon.logout::before{
+  font-family: "codicon";
+	content: '\ea6e';
+}
+
+.icon.open_in_browser::before{
+  font-family: "codicon";
+	content: '\eb14';
+}
+
+.icon.paste::before{
+  font-family: "codicon";
+	content: '\eac0';
+}
+
+.icon.perm_media::before{
+  font-family: "codicon";
+	content: '\eaea';
+}
+
+.icon.person::before{
+  font-family: "codicon";
+	content: '\ea7e';
+}
+
+.icon.pin::before{
+  font-family: "codicon";
+	content: '\eba0';
+}
+
+.icon.pin-off::before{
+  font-family: "codicon";
+	content: '\ebb2';
+}
+
+.icon.public::before{
+  font-family: "codicon";
+	content: '\eb01';
+}
+
+.icon.redo::before{
+  font-family: "codicon";
+	content: '\ebb0';
+}
+
+.icon.refresh::before{
+  font-family: "codicon";
+	content: '\eb37';
+}
+
+.icon.replace::before{
+  font-family: "codicon";
+	content: '\eb3d';
+}
+
+.icon.replace_all::before{
+  font-family: "codicon";
+	content: '\eb3c';
+}
+
+.icon.search::before{
+  font-family: "codicon";
+	content: '\ec70';
+}
+
+.icon.stars::before{
+  font-family: "codicon";
+	content: '\eb59';
+}
+
+.icon.tag::before{
+  font-family: "codicon";
+	content: '\ea66';
+}
+
+/* .icon.telegram::before{
+  font-family: "codicon";
+  content: '\';
+} */
+
+.icon.text_format::before{
+  font-family: "codicon";
+	content: '\eb69';
+}
+
+.icon.twitter::before{
+  font-family: "codicon";
+  content: '\eb72';
+}
+
+.icon.undo::before{
+  font-family: "codicon";
+	content: '\eae2';
+}
+
+.icon.update::before{
+  font-family: "codicon";
+	content: '\eb44';
+}
+
+.icon.verified::before{
+  font-family: "codicon";
+	content: '\ebe9';
+}
+
+.icon.terminal::before{
+  font-family: "codicon";
+	content: '\ea85';
+}
+
+.icon.square-terminal::before{
+  font-family: "codicon";
+	content: '\ebca';
+}
+
+.icon.zip::before{
+  font-family: "codicon";
+	content: '\eaef';
+}
+
+/* New Icon Class ==================================================================== */
+.icon.folder_open::before{
+  font-family: "codicon";
+	content: '\eaf7';
+}
+
+.icon.save_as::before{
+  font-family: "codicon";
+	content: '\eb4a';
+}
+
+.icon.edit_text::before{
+  font-family: "codicon";
+	content: '\ec61';
+}
+
+.icon.select::before{
+  font-family: "codicon";
+	content: '\eb67';
+}
+
+.icon.select_all::before{
+  font-family: "codicon";
+	content: '\eb7e';
+}

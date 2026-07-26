@@ -15,9 +15,12 @@ export const iconMap = {
 	"compare_arrows": "close_others",
 	"document-add": "document_add",
 	"document-error": "document_error",
+	"document-remove": "document_remove",
 	"document-text-outline": "document_text_outline"
 	"file_downloadget_app": "download",
 	"first_page": "close_left",
+	"folder-add": "folder_add",
+	"folder-remove": "folder_remove",
 	"funnel": "filter",
 	"historyrestore": "history",
 	"last_page": "close_right",
@@ -46,6 +49,7 @@ export const keepIcons = [
 	"check",
 	"check_circle",
 	"copy",
+	"cut",
 	"delete",
 	"delete_outline",
 	"discord",
@@ -104,4 +108,5 @@ export const newIcons = {
 	"select": null,
 	"select_all": null,
 	"repo": null,
+	"filter_filled": null,
 };
