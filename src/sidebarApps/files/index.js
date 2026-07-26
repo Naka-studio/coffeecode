@@ -6,7 +6,7 @@ import settings from "lib/settings";
 let container;
 
 export default [
-	"documents", // icon
+	"active_library", // icon
 	"files", // id
 	strings["files"], // title
 	initApp, // init function
