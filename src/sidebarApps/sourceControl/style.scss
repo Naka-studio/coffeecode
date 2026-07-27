@@ -154,3 +154,34 @@
     }
   }
 }
+
+/* Error state kalau user :belum login, tidak ada git remote, file bukan dari repo */
+
+.sc-error-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: var(--space-6);
+  text-align: center;
+  gap: var(--space-3);
+
+  .sc-error-icon {
+    font-size: 32px;
+    color: var(--text-secondary);
+    opacity: 0.5;
+  }
+
+  .sc-error-title {
+    font-size: var(--text-body);
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  .sc-error-message {
+    font-size: var(--text-caption);
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+}
