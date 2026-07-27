@@ -16,7 +16,7 @@ async function checkGitRepo(folderUrl) {
 async function checkGitRemote() {
   try {
     const config = await fsOperation(
-      window.addedFolder?.[0]?.url + "/.git/config",
+      window.addedFolder?.[0]?.url + "/.git/config"
     ).readFile("utf-8");
     return config.includes("[remote");
   } catch {
@@ -54,21 +54,10 @@ async function init(container) {
       $wrapper,
       "codicon-folder-opened",
       "No Folder Opened",
-      "Open a folder first to use Source Control.",
+      "Open a folder first to use Source Control."
     );
     return;
   }
-
-  // Listen ketika folder dibuka
-  const onFolderAdded = async () => {
-    container.innerHTML = "";
-    await init(container);
-  };
-
-  window.addEventListener("folder-added", onFolderAdded);
-
-  // CleanUp
-  window.removeEventListener("folder-added", onFolderAdded);
 
   // Cek git repo
   const isRepo = await checkGitRepo(folderUrl);
@@ -77,7 +66,7 @@ async function init(container) {
       $wrapper,
       "codicon-git-commit",
       "Not a Git Repository",
-      "This folder is not a git repository. Initialize one in Source Control Page.",
+      "This folder is not a git repository. Initialize one in Source Control Page."
     );
     return;
   }
@@ -89,7 +78,7 @@ async function init(container) {
       $wrapper,
       "codicon-remote",
       "No Remote Repository",
-      "No remote repository found. Add one in Source Control Page.",
+      "No remote repository found. Add one in Source Control Page."
     );
     return;
   }
@@ -104,6 +93,7 @@ async function init(container) {
 
   const $el = (
     <div className="sc-content">
+
       <div className="sc-header">
         <span className="codicon codicon-source-control sc-header-icon" />
         <span className="sc-header-title">Source Control</span>
@@ -130,7 +120,9 @@ async function init(container) {
       <div className="sc-divider" />
 
       <div className="sc-section sc-changes-section">
-        <div className="sc-section-title">Changes {$changesCount}</div>
+        <div className="sc-section-title">
+          Changes {$changesCount}
+        </div>
         {$fileList}
       </div>
 
@@ -153,12 +145,17 @@ async function init(container) {
           Open Source Control
         </button>
       </div>
+
     </div>
   );
 
   // Sync project
   function updateProject() {
-    $projectName.textContent = folderUrl.split("/").pop() || "—";
+    const activeFile = window.editorManager?.activeFile;
+    if (activeFile) {
+      const folderName = folderUrl.split("/").pop() || "—";
+      $projectName.textContent = folderName;
+    }
   }
 
   // Update changes
@@ -176,27 +173,18 @@ async function init(container) {
     });
   }
 
-  async function refresh() {
-    updateProject();
+  updateProject();
+  updateChanges([
+    { status: "M", name: "index.html" },
+    { status: "M", name: "style.css" },
+    { status: "?", name: "assets/logo.svg" },
+  ]);
 
-    // nanti tinggal ganti dengan git status asli
-    updateChanges([
-      { status: "M", name: "index.html" },
-      { status: "M", name: "style.css" },
-      { status: "?", name: "assets/logo.svg" },
-    ]);
-  }
-
-  await refresh();
-
-  const onSwitchFile = async () => {
-    await refresh();
-  };
-
-  window.editorManager?.on("switch-file", onSwitchFile);
+  window.editorManager?.on("switch-file", updateProject);
+  $wrapper.append($el);
 
   return () => {
-    window.editorManager?.off("switch-file", onSwitchFile);
+    window.editorManager?.off("switch-file", updateProject);
   };
 }
 
