@@ -87,9 +87,9 @@ function init($el) {
  */
 async function loadApps() {
 	add(...(await import("./files")).default);
+	add(...(await import("./sourceControl")).default);
 	add(...(await import("./extensions")).default);
 	add(...(await import("./notification")).default);
-	// Source Control - phase 2.6
 	setSponsorSidebarAppVisibility(appSettings.value.showSponsorSidebarApp);
 }
 
