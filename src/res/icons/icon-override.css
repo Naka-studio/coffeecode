@@ -612,3 +612,14 @@
   font-family: "codicon";
 	content: '\eb7e';
 }
+
+/* Folder open/close state */
+.list.collapsible.hidden > .tile > .icon.folder::before {
+  font-family: "codicon" !important;
+  content: "\eb46" !important;
+}
+
+.list.collapsible:not(.hidden) > .tile > .icon.folder::before {
+  font-family: "codicon" !important;
+  content: "\eb45" !important;
+}
