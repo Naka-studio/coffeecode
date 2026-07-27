@@ -132,7 +132,7 @@ class Settings {
 			uiZoom: 100,
 			fontSize: "12px",
 			cursorWidth: 2,
-			editorTheme: "one_dark",
+			editorTheme: "cfcodeDefault",
 			textWrap: true,
 			softTab: true,
 			tabSize: 2,
