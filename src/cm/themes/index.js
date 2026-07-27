@@ -14,15 +14,11 @@ import monokai, { config as monokaiConfig } from "./monokai";
 import noctisLilac, { config as noctisLilacConfig } from "./noctisLilac";
 import nord, { config as nordConfig } from "./nord";
 import solarizedDark, { config as solarizedDarkConfig } from "./solarizedDark";
-import solarizedLight, {
-	config as solarizedLightConfig,
-} from "./solarizedLight";
+import solarizedLight, { config as solarizedLightConfig } from "./solarizedLight";
 import tokyoNight, { config as tokyoNightConfig } from "./tokyoNight";
 import tokyoNightDay, { config as tokyoNightDayConfig } from "./tokyoNightDay";
 import tomorrowNight, { config as tomorrowNightConfig } from "./tomorrowNight";
-import tomorrowNightBright, {
-	config as tomorrowNightBrightConfig,
-} from "./tomorrowNightBright";
+import tomorrowNightBright, { config as tomorrowNightBrightConfig } from "./tomorrowNightBright";
 import vscodeDark, { config as vscodeDarkConfig } from "./vscodeDark";
 import cfcodeDefault, { config as cfcodeDefaultConfig } from "./cfcodedefault";
 
@@ -161,8 +157,27 @@ export function removeTheme(id) {
 	themes.delete(String(id).toLowerCase());
 }
 
-addTheme("one_dark", "One Dark", true, () => [oneDark], oneDarkConfig);
-addTheme(auraConfig.name, "Aura", !!auraConfig.dark, () => aura(), auraConfig);
+addTheme(
+  cfcodeDefaultConfig.name,
+  "CF Code (Default)",
+  true,
+  !!cfcodeDefaultConfig.dark,
+  () => cfcodeDefault(),
+  cfcodeDefaultConfig,
+);
+addTheme(
+  "one_dark",
+  "One Dark",
+  () => [oneDark],
+  oneDarkConfig,
+);
+addTheme(
+  auraConfig.name,
+  "Aura",
+  !!auraConfig.dark,
+  () => aura(),
+  auraConfig,
+);
 addTheme(
 	cobaltConfig.name,
 	"Cobalt",
@@ -184,7 +199,13 @@ addTheme(
 	() => dracula(),
 	draculaConfig,
 );
-addTheme(nordConfig.name, "Nord", !!nordConfig.dark, () => nord(), nordConfig);
+addTheme(
+  nordConfig.name,
+  "Nord",
+  !!nordConfig.dark,
+  () => nord(),
+  nordConfig,
+);
 addTheme(
 	gruvboxDarkConfig.name,
 	"Gruvbox Dark",
@@ -275,13 +296,6 @@ addTheme(
 	!!vscodeDarkConfig.dark,
 	() => vscodeDark(),
 	vscodeDarkConfig,
-);
-addTheme(
-    cfcodeDefaultConfig.name,
-    "CF Code (Default)",
-    !!cfcodeDefaultConfig.dark,
-    () => cfcodeDefault(),
-    cfcodeDefaultConfig,
 );
 
 export default {
