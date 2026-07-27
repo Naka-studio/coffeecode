@@ -1,0 +1,170 @@
+/* CF Code Completion Icons — using Codicon */
+
+.cm-completionIcon {
+  font-family: 'codicon' !important;
+  font-size: 14px !important;
+  line-height: 1 !important;
+  width: 16px !important;
+  text-align: center !important;
+  opacity: 1 !important;
+}
+
+.cm-completionIcon-function::after {
+  content: '\ea8c';
+}
+
+.cm-completionIcon-method::after {
+  content: '\ea8c';
+}
+
+.cm-completionIcon-variable::after {
+  content: '\ea88';
+}
+
+.cm-completionIcon-class::after {
+  content: '\eb5b';
+}
+
+.cm-completionIcon-keyword::after {
+  content: '\eb62';
+}
+
+.cm-completionIcon-property::after {
+  content: '\eb65';
+}
+
+.cm-completionIcon-text::after {
+  content: '\eb6f';
+}
+
+.cm-completionIcon-snippet::after {
+  content: '\eb66';
+}
+
+.cm-completionIcon-interface::after {
+  content: '\eb61';
+}
+
+.cm-completionIcon-enum::after {
+  content: '\ea95';
+}
+
+.cm-completionIcon-constant::after {
+  content: '\eb5d';
+}
+
+.cm-completionIcon-module::after {
+  content: '\ea8b';
+}
+
+.cm-completionIcon-field::after {
+  content: '\eb5f';
+}
+
+.cm-completionIcon-type::after {
+  content: '\ea92';
+}
+
+/* Keyword */
+.cm-tooltip-autocomplete .cm-completionIcon-keyword::after {
+  content: '\eb5f';
+}
+
+/* Property */
+.cm-tooltip-autocomplete .cm-completionIcon-property::after {
+  content: '\eb65';
+}
+
+/* Field */
+.cm-tooltip-autocomplete .cm-completionIcon-field::after {
+  content: '\ea80';
+}
+
+/* Constructor */
+.cm-tooltip-autocomplete .cm-completionIcon-constructor::after {
+  content: '\eb61';
+}
+
+/* Enum */
+.cm-tooltip-autocomplete .cm-completionIcon-enum::after {
+  content: '\ea95';
+}
+
+/* Enum member */
+.cm-tooltip-autocomplete .cm-completionIcon-enumMember::after {
+  content: '\eb5d';
+}
+
+/* Module / namespace */
+.cm-tooltip-autocomplete .cm-completionIcon-module::after {
+  content: '\ea8b';
+}
+
+/* Namespace */
+.cm-tooltip-autocomplete .cm-completionIcon-namespace::after {
+  content: '\ea98';
+}
+
+/* Snippet */
+.cm-tooltip-autocomplete .cm-completionIcon-text::after {
+  content: '\eb66';
+}
+
+/* Unit */
+.cm-tooltip-autocomplete .cm-completionIcon-unit::after {
+  content: '\eb52';
+}
+
+/* Value */
+.cm-tooltip-autocomplete .cm-completionIcon-value::after {
+  content: '\eb5f';
+}
+
+/* File */
+.cm-tooltip-autocomplete .cm-completionIcon-file::after {
+  content: '\eb60';
+}
+
+/* Folder */
+.cm-tooltip-autocomplete .cm-completionIcon-folder::after {
+  content: '\ea83';
+}
+
+/* Color swatch */
+.cm-tooltip-autocomplete .cm-completionIcon-color::after {
+  content: '\eb5c';
+}
+
+/* Event */
+.cm-tooltip-autocomplete .cm-completionIcon-event::after {
+  content: '\eb78';
+}
+
+/* Operator */
+.cm-tooltip-autocomplete .cm-completionIcon-operator::after {
+  content: '\eb64';
+}
+
+/* Struct */
+.cm-tooltip-autocomplete .cm-completionIcon-struct::after {
+  content: '\ea91';
+}
+
+/* Delete Emmet Abbreviation OG icon */
+.cm-tooltip-autocomplete .cm-completionIcon-emmet {
+  font-size: 0;
+  color: transparent;
+  background: none;
+  background-image: none;
+}
+
+/* Emmet Abbrevation */
+.cm-tooltip-autocomplete .cm-completionIcon-emmet::after {
+  background: none;
+  background-image: none;
+  font-size: 14px;
+  content: '\ec1e';
+  width: auto;
+  height: auto;
+  display: inline;
+}
