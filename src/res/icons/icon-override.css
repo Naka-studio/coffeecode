@@ -309,7 +309,7 @@
 
 .icon.discord::before{
   font-family: "cfcode-icons" !important;
-  content: '\';
+  content: '\f00e';
 }
 
 .icon.documents::before{
