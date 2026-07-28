@@ -138,6 +138,8 @@ async function init(container) {
 
     // Step 1: cek folder terbuka
     const folderUrl = window.addedFolder?.[0]?.url;
+    console.log("DEBUG folderUrl:", folderUrl);
+    console.log("DEBUG addedFolder:", window.addedFolder);
     if (!folderUrl) {
       renderError(
         $wrapper,
