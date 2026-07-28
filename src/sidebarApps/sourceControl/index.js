@@ -5,6 +5,18 @@ const SIDEBAR_ID = "source-control";
 const SIDEBAR_ICON = "codicon codicon-source-control";
 const SIDEBAR_TITLE = "Source Control";
 
+// ============================================================
+// Auth check — placeholder, nanti connect ke auth system
+// ============================================================
+function isUserLoggedIn() {
+  // TODO: connect ke auth system CF Code
+  // Sementara return true biar gak block development
+  return true;
+}
+
+// ============================================================
+// Git checks
+// ============================================================
 async function checkGitRepo(folderUrl) {
   try {
     return await fsOperation(folderUrl + "/.git").exists();
@@ -13,20 +25,21 @@ async function checkGitRepo(folderUrl) {
   }
 }
 
-async function checkGitRemote() {
+async function checkGitRemote(folderUrl) {
   try {
-    const config = await fsOperation(
-      window.addedFolder?.[0]?.url + "/.git/config"
-    ).readFile("utf-8");
+    const config = await fsOperation(folderUrl + "/.git/config").readFile("utf-8");
     return config.includes("[remote");
   } catch {
     return false;
   }
 }
 
+// ============================================================
+// Render error state
+// ============================================================
 function renderError(container, icon, title, message) {
   container.innerHTML = "";
-  const $error = (
+  container.append(
     <div className="sc-error-state">
       <span className={`codicon ${icon} sc-error-icon`} />
       <div className="sc-error-title">{title}</div>
@@ -39,59 +52,22 @@ function renderError(container, icon, title, message) {
       </button>
     </div>
   );
-  container.append($error);
 }
 
-async function init(container) {
-  const $wrapper = <div className="source-control-sidebar" />;
-  container.append($wrapper);
+// ============================================================
+// Render dashboard normal
+// ============================================================
+function renderDashboard(container, folderUrl) {
+  container.innerHTML = "";
 
-  // Cek folder aktif
-  const folderUrl = window.addedFolder?.[0]?.url;
+  const $projectName = <span>{folderUrl.split("/").pop() || "—"}</span>;
+  const $branchName = <span>—</span>;
+  const $changesCount = <span></span>;
+  const $fileList = <div className="sc-file-list"></div>;
+  const $ahead = <span>0</span>;
+  const $behind = <span>0</span>;
 
-  if (!folderUrl) {
-    renderError(
-      $wrapper,
-      "codicon-folder-opened",
-      "No Folder Opened",
-      "Open a folder first to use Source Control."
-    );
-    return;
-  }
-
-  // Cek git repo
-  const isRepo = await checkGitRepo(folderUrl);
-  if (!isRepo) {
-    renderError(
-      $wrapper,
-      "codicon-git-commit",
-      "Not a Git Repository",
-      "This folder is not a git repository. Initialize one in Source Control Page."
-    );
-    return;
-  }
-
-  // Cek git remote
-  const hasRemote = await checkGitRemote();
-  if (!hasRemote) {
-    renderError(
-      $wrapper,
-      "codicon-remote",
-      "No Remote Repository",
-      "No remote repository found. Add one in Source Control Page."
-    );
-    return;
-  }
-
-  // Render dashboard normal
-  const $projectName = <span id="sc-project-name">—</span>;
-  const $branchName = <span id="sc-branch-name">—</span>;
-  const $changesCount = <span id="sc-changes-count"></span>;
-  const $fileList = <div id="sc-file-list"></div>;
-  const $ahead = <span id="sc-ahead">0</span>;
-  const $behind = <span id="sc-behind">0</span>;
-
-  const $el = (
+  container.append(
     <div className="sc-content">
 
       <div className="sc-header">
@@ -148,43 +124,82 @@ async function init(container) {
 
     </div>
   );
+}
 
-  // Sync project
-  function updateProject() {
-    const activeFile = window.editorManager?.activeFile;
-    if (activeFile) {
-      const folderName = folderUrl.split("/").pop() || "—";
-      $projectName.textContent = folderName;
-    }
-  }
+// ============================================================
+// Main init
+// ============================================================
+async function init(container) {
+  const $wrapper = <div className="source-control-sidebar" />;
+  container.append($wrapper);
 
-  // Update changes
-  function updateChanges(files = []) {
-    $fileList.innerHTML = "";
-    $changesCount.textContent = files.length ? `(${files.length})` : "";
-    files.forEach(({ status, name }) => {
-      const $item = (
-        <div className={`sc-file-item ${status === "?" ? "untracked" : ""}`}>
-          <span className="sc-file-status">{status}</span>
-          <span className="sc-file-name">{name}</span>
-        </div>
+  async function refresh() {
+    $wrapper.innerHTML = "";
+
+    // Step 1: cek folder terbuka
+    const folderUrl = window.addedFolder?.[0]?.url;
+    if (!folderUrl) {
+      renderError(
+        $wrapper,
+        "codicon-folder-opened",
+        "No Folder Opened",
+        "Open a folder first to use Source Control."
       );
-      $fileList.append($item);
-    });
+      return;
+    }
+
+    // Step 2: cek login (placeholder)
+    if (!isUserLoggedIn()) {
+      renderError(
+        $wrapper,
+        "codicon-account",
+        "Not Logged In",
+        "Please login to use Source Control."
+      );
+      return;
+    }
+
+    // Step 3: cek git repo
+    const isRepo = await checkGitRepo(folderUrl);
+    if (!isRepo) {
+      renderError(
+        $wrapper,
+        "codicon-git-commit",
+        "Not a Git Repository",
+        "This folder is not a git repository. Initialize one in Source Control Page."
+      );
+      return;
+    }
+
+    // Step 4: cek git remote
+    const hasRemote = await checkGitRemote(folderUrl);
+    if (!hasRemote) {
+      renderError(
+        $wrapper,
+        "codicon-remote",
+        "No Remote Repository",
+        "No remote repository found. Add one in Source Control Page."
+      );
+      return;
+    }
+
+    // Step 5: render dashboard
+    renderDashboard($wrapper, folderUrl);
   }
 
-  updateProject();
-  updateChanges([
-    { status: "M", name: "index.html" },
-    { status: "M", name: "style.css" },
-    { status: "?", name: "assets/logo.svg" },
-  ]);
+  // Auto refresh listeners
+  window.addEventListener("folder-added", refresh);
+  window.addEventListener("folder-removed", refresh);
+  window.editorManager?.on("switch-file", refresh);
 
-  window.editorManager?.on("switch-file", updateProject);
-  $wrapper.append($el);
+  // Initial check
+  await refresh();
 
+  // Cleanup
   return () => {
-    window.editorManager?.off("switch-file", updateProject);
+    window.removeEventListener("folder-added", refresh);
+    window.removeEventListener("folder-removed", refresh);
+    window.editorManager?.off("switch-file", refresh);
   };
 }
 
