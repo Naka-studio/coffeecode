@@ -1,5 +1,6 @@
 import "./style.scss";
 import fsOperation from "fileSystem";
+import Url from "utils/Url";
 
 const SIDEBAR_ID = "source-control";
 const SIDEBAR_ICON = "codicon codicon-source-control";
@@ -19,8 +20,7 @@ function isUserLoggedIn() {
 // ============================================================
 async function checkGitRepo(folderUrl) {
   try {
-    const entries = await fsOperation(folderUrl).lsDir();
-    return entries.some(e => e.name === ".git");
+    return await fsOperation(Url.join(folderUrl, ".git")).exists();
   } catch {
     return false;
   }
@@ -28,10 +28,8 @@ async function checkGitRepo(folderUrl) {
 
 async function checkGitRemote(folderUrl) {
   try {
-    const gitEntries = await fsOperation(folderUrl + "%2F.git").lsDir();
-    const hasConfig = gitEntries.some(e => e.name === "config");
-    if (!hasConfig) return false;
-    const config = await fsOperation(folderUrl + "%2F.git%2Fconfig").readFile("utf-8");
+    const configUrl = Url.join(folderUrl, ".git", "config");
+    const config = await fsOperation(configUrl).readFile("utf-8");
     return config.includes("[remote");
   } catch {
     return false;
