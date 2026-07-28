@@ -188,8 +188,8 @@ async function init(container) {
   }
 
   // Auto refresh listeners
-  window.addEventListener("folder-added", refresh);
-  window.addEventListener("folder-removed", refresh);
+  window.editorManager?.on("add-folder", refresh);
+  window.editorManager?.on("remove-folder", refresh);
   window.editorManager?.on("switch-file", refresh);
 
   // Initial check
@@ -197,8 +197,8 @@ async function init(container) {
 
   // Cleanup
   return () => {
-    window.removeEventListener("folder-added", refresh);
-    window.removeEventListener("folder-removed", refresh);
+    window.editorManager?.off("add-folder", refresh);
+    window.editorManager?.off("remove-folder", refresh);
     window.editorManager?.off("switch-file", refresh);
   };
 }
