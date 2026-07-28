@@ -44,7 +44,7 @@ export default function AboutInclude() {
 				</a>
 				<a href={config.BASE_URL} className="info-item">
 					<div className="info-item-icon">
-						<span className="icon coffeecode"></span>
+						<span className="icon cfcode-fill"></span>
 					</div>
 					<div className="info-item-text">
 						Official webpage
@@ -53,10 +53,10 @@ export default function AboutInclude() {
 				</a>
 				<a href={config.FOXBIZ_URL} className="info-item">
 					<div className="info-item-icon">
-						<span className="icon bayanaka"></span>
+						<span className="icon naka-studio"></span>
 					</div>
 					<div className="info-item-text">
-						Bayanaka
+						Naka Code Studios. (NCS)
 						<div className="info-item-subtext">{config.FOXBIZ_URL}</div>
 					</div>
 				</a>
