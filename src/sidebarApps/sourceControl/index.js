@@ -19,8 +19,8 @@ function isUserLoggedIn() {
 // ============================================================
 async function checkGitRepo(folderUrl) {
   try {
-    const gitUrl = folderUrl + "%2F.git";
-    return await fsOperation(gitUrl).exists();
+    const entries = await fsOperation(folderUrl).lsDir();
+    return entries.some(e => e.name === ".git");
   } catch {
     return false;
   }
@@ -28,8 +28,10 @@ async function checkGitRepo(folderUrl) {
 
 async function checkGitRemote(folderUrl) {
   try {
-    const configUrl = folderUrl + "%2F.git%2Fconfig";
-    const config = await fsOperation(configUrl).readFile("utf-8");
+    const gitEntries = await fsOperation(folderUrl + "%2F.git").lsDir();
+    const hasConfig = gitEntries.some(e => e.name === "config");
+    if (!hasConfig) return false;
+    const config = await fsOperation(folderUrl + "%2F.git%2Fconfig").readFile("utf-8");
     return config.includes("[remote");
   } catch {
     return false;
