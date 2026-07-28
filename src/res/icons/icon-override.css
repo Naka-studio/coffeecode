@@ -28,7 +28,7 @@
 
 .icon.bayanaka::before,
 .icon.nakaStudio::before{
-	font-family: "cfcode-icons";
+	font-family: "cfcode-icons" !important;
 	content: '\f010';
 }
 
@@ -52,7 +52,7 @@
 
 .icon.coffeecode::before,
 .icon.cfcode-fill::before{
-	font-family: "cfcode-icons";
+	font-family: "cfcode-icons" !important;
 	content: '\f00c';
 }
 
@@ -307,10 +307,10 @@
 	content: '\ead0';      /* <---- Sememntara karena untuk icon unistalll plugins*/
 }
 
-/* .icon.discord::before{
-  font-family: "codicon";
+.icon.discord::before{
+  font-family: "cfcode-icons" !important;
   content: '\';
-} */
+}
 
 .icon.documents::before{
   font-family: "codicon";
@@ -377,15 +377,15 @@
   content: '\';
 } */
 
-/* .icon.gmail::before{
-  font-family: "codicon";
-  content: '\';
-} */
+.icon.gmail::before{
+  font-family: "cfcode-icons" !important;
+  content: '\f00a';
+}
 
-/*.icon.googlechrome::before{
-  font-family: "codicon";
-  content: '\';
-}*/
+.icon.googlechrome::before{
+  font-family: "cfcode-icons" !important;
+  content: '\f00d';
+}
 
 .icon.house::before{
   font-family: "codicon";
@@ -403,7 +403,7 @@
 }
 
 .icon.image::before{
-  font-family: "cfcode-icons";
+  font-family: "cfcode-icons" !important;
 	content: '\f006';
 }
 
@@ -418,7 +418,7 @@
 }
 
 .icon.instagram::before{
-  font-family: "cfcode-icons";
+  font-family: "cfcode-icons" !important;
 	content: '\f005';
 }
 
@@ -537,10 +537,10 @@
 	content: '\ea66';
 }
 
-/* .icon.telegram::before{
-  font-family: "codicon";
-  content: '\';
-} */
+.icon.telegram::before{
+  font-family: "cfcode-icons" !important;
+  content: '\f003';
+}
 
 .icon.text_format::before{
   font-family: "codicon";
