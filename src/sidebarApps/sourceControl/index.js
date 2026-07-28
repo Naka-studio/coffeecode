@@ -19,7 +19,12 @@ function isUserLoggedIn() {
 // ============================================================
 async function checkGitRepo(folderUrl) {
   try {
-    return await fsOperation(folderUrl + "/.git").exists();
+    // Convert content:// ke file path
+    const normalizedUrl = folderUrl.replace(
+      /^content:\/\/com\.android\.externalstorage\.documents\/tree\/[^:]+:/,
+      "file:///storage/emulated/0/",
+    );
+    return await fsOperation(normalizedUrl + "/.git").exists();
   } catch {
     return false;
   }
@@ -27,7 +32,13 @@ async function checkGitRepo(folderUrl) {
 
 async function checkGitRemote(folderUrl) {
   try {
-    const config = await fsOperation(folderUrl + "/.git/config").readFile("utf-8");
+    const normalizedUrl = folderUrl.replace(
+      /^content:\/\/com\.android\.externalstorage\.documents\/tree\/[^:]+:/,
+      "file:///storage/emulated/0/",
+    );
+    const config = await fsOperation(normalizedUrl + "/.git/config").readFile(
+      "utf-8",
+    );
     return config.includes("[remote");
   } catch {
     return false;
@@ -50,7 +61,7 @@ function renderError(container, icon, title, message) {
       >
         Open Source Control
       </button>
-    </div>
+    </div>,
   );
 }
 
@@ -69,7 +80,6 @@ function renderDashboard(container, folderUrl) {
 
   container.append(
     <div className="sc-content">
-
       <div className="sc-header">
         <span className="codicon codicon-source-control sc-header-icon" />
         <span className="sc-header-title">Source Control</span>
@@ -96,9 +106,7 @@ function renderDashboard(container, folderUrl) {
       <div className="sc-divider" />
 
       <div className="sc-section sc-changes-section">
-        <div className="sc-section-title">
-          Changes {$changesCount}
-        </div>
+        <div className="sc-section-title">Changes {$changesCount}</div>
         {$fileList}
       </div>
 
@@ -121,8 +129,7 @@ function renderDashboard(container, folderUrl) {
           Open Source Control
         </button>
       </div>
-
-    </div>
+    </div>,
   );
 }
 
@@ -145,7 +152,7 @@ async function init(container) {
         $wrapper,
         "codicon-folder-opened",
         "No Folder Opened",
-        "Open a folder first to use Source Control."
+        "Open a folder first to use Source Control.",
       );
       return;
     }
@@ -156,7 +163,7 @@ async function init(container) {
         $wrapper,
         "codicon-account",
         "Not Logged In",
-        "Please login to use Source Control."
+        "Please login to use Source Control.",
       );
       return;
     }
@@ -168,7 +175,7 @@ async function init(container) {
         $wrapper,
         "codicon-git-commit",
         "Not a Git Repository",
-        "This folder is not a git repository. Initialize one in Source Control Page."
+        "This folder is not a git repository. Initialize one in Source Control Page.",
       );
       return;
     }
@@ -180,7 +187,7 @@ async function init(container) {
         $wrapper,
         "codicon-remote",
         "No Remote Repository",
-        "No remote repository found. Add one in Source Control Page."
+        "No remote repository found. Add one in Source Control Page.",
       );
       return;
     }
