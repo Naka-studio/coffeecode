@@ -19,13 +19,16 @@ function isUserLoggedIn() {
 // ============================================================
 async function checkGitRepo(folderUrl) {
   try {
-    // Convert content:// ke file path
     const normalizedUrl = folderUrl.replace(
       /^content:\/\/com\.android\.externalstorage\.documents\/tree\/[^:]+:/,
-      "file:///storage/emulated/0/",
+      "file:///storage/emulated/0/"
     );
-    return await fsOperation(normalizedUrl + "/.git").exists();
-  } catch {
+    console.log("DEBUG normalizedUrl:", normalizedUrl);
+    const exists = await fsOperation(normalizedUrl + "/.git").exists();
+    console.log("DEBUG .git exists:", exists);
+    return exists;
+  } catch (e) {
+    console.log("DEBUG checkGitRepo error:", e);
     return false;
   }
 }
