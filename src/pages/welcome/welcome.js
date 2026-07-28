@@ -21,7 +21,7 @@ export default function openWelcomeTab() {
 		render: true,
 		type: "page",
 		content: welcomeContent,
-		tabIcon: "icon coffeecode",
+		tabIcon: "icon cfcode-outline",
 		hideQuickTools: true,
 	});
 
