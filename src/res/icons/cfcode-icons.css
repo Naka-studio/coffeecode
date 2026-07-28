@@ -9,19 +9,6 @@
     font-family: "cfcode-icons";
     base-palette: 0;
 }
-.icon {
-    /* Use !important to prevent extensions from overriding this font. */
-    font-family: "cfcode-icons";
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
-
-    /* Better Font Rendering =========== */
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
 .palette0 {
     font-palette: --palette0;
     color: currentColor;
