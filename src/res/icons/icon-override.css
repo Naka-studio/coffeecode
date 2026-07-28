@@ -11,7 +11,7 @@
 .icon.add_photo_alternate::before,
 .icon.add_image::before{
 	font-family: "cfcode-icons";
-	content: '\f005';
+	content: '\f006';
 }
 
 .icon.arrow_back::before,
@@ -29,7 +29,7 @@
 .icon.bayanaka::before,
 .icon.nakaStudio::before{
 	font-family: "cfcode-icons";
-	content: '\f002';
+	content: '\f010';
 }
 
 .icon.chat_bubble::before,
@@ -51,9 +51,9 @@
 }
 
 .icon.coffeecode::before,
-.icon.cfCode::before{
+.icon.cfcode-fill::before{
 	font-family: "cfcode-icons";
-	content: '\f00a';
+	content: '\f00c';
 }
 
 .icon.color_lenspalette::before,
@@ -382,10 +382,10 @@
   content: '\';
 } */
 
-/* .icon.googlechrome::before{
+/*.icon.googlechrome::before{
   font-family: "codicon";
   content: '\';
-} */
+}*/
 
 .icon.house::before{
   font-family: "codicon";
@@ -404,7 +404,7 @@
 
 .icon.image::before{
   font-family: "cfcode-icons";
-	content: '\f005';
+	content: '\f006';
 }
 
 .icon.info::before{
@@ -419,7 +419,7 @@
 
 .icon.instagram::before{
   font-family: "cfcode-icons";
-	content: '\f004';
+	content: '\f005';
 }
 
 .icon.keyboard_arrow_down::before{

@@ -11,7 +11,7 @@
 }
 .icon {
     /* Use !important to prevent extensions from overriding this font. */
-    font-family: "cfcode-icons" !important;
+    font-family: "cfcode-icons";
     font-style: normal;
     font-weight: normal;
     font-variant: normal;
