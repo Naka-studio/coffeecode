@@ -14,34 +14,32 @@ function isUserLoggedIn() {
   return true;
 }
 
+
+// Convert content:// URI ke file path
+function normalizeUrl(folderUrl) {
+  return folderUrl
+    .replace("content://com.android.externalstorage.documents/tree/", "")
+    .replace("primary%3A", "/storage/emulated/0/")
+    .replace("primary:", "/storage/emulated/0/");
+}
 // ============================================================
 // Git checks
 // ============================================================
 async function checkGitRepo(folderUrl) {
   try {
-    const normalizedUrl = folderUrl.replace(
-      /^content:\/\/com\.android\.externalstorage\.documents\/tree\/[^:]+:/,
-      "file:///storage/emulated/0/"
-    );
-    console.log("DEBUG normalizedUrl:", normalizedUrl);
-    const exists = await fsOperation(normalizedUrl + "/.git").exists();
-    console.log("DEBUG .git exists:", exists);
-    return exists;
+    const normalizedUrl = normalizeUrl(folderUrl);
+    console.log("DEBUG normalized:", normalizedUrl);
+    return await fsOperation(normalizedUrl + "/.git").exists();
   } catch (e) {
-    console.log("DEBUG checkGitRepo error:", e);
+    console.log("DEBUG error:", e);
     return false;
   }
 }
 
 async function checkGitRemote(folderUrl) {
   try {
-    const normalizedUrl = folderUrl.replace(
-      /^content:\/\/com\.android\.externalstorage\.documents\/tree\/[^:]+:/,
-      "file:///storage/emulated/0/",
-    );
-    const config = await fsOperation(normalizedUrl + "/.git/config").readFile(
-      "utf-8",
-    );
+    const normalizedUrl = normalizeUrl(folderUrl);
+    const config = await fsOperation(normalizedUrl + "/.git/config").readFile("utf-8");
     return config.includes("[remote");
   } catch {
     return false;
