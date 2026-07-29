@@ -1,13 +1,13 @@
 body {
   &.no-animation {
     footer {
-      border-top: solid 1px rgba(0, 0, 0, 0.2);
+      border-top: solid 1px var(--shadow-sm);
     }
 
     .header,
     header {
       &.tile {
-        border-bottom: solid 1px rgba(0, 0, 0, 0.2);
+        border-bottom: solid 1px var(--shadow-sm);
         box-sizing: border-box;
       }
     }
@@ -79,8 +79,7 @@ body {
               height: 40px;
               display: flex;
               border-radius: 20px;
-              border: solid 1px rgb(255, 255, 255);
-              border: solid 1px var(--primary-text-color);
+              border: solid 1px var(--text-inverse);
             }
           }
 
@@ -219,8 +218,7 @@ wc-page {
   transform: rotate(0) translate3d(0, 0, 0);
   overflow-x: hidden;
   overflow-y: auto;
-  background-color: rgb(255, 255, 255);
-  background-color: var(--secondary-color);
+  background-color: var(--text-inverse);
   z-index: 108;
   height: 100%;
   width: 100%;
@@ -229,8 +227,7 @@ wc-page {
   &[open-file-list-pos="bottom"] {
     &#root {
       footer {
-        box-shadow: 0 -32px 4px rgba(0, 0, 0, 0.2);
-        box-shadow: 0 -32px 4px var(--box-shadow-color);
+        box-shadow: 0 -32px 4px var(--shadow-sm);
       }
 
       .open-file-list:not(.editor-pane-tabs) {
@@ -252,8 +249,7 @@ wc-page {
       display: flex;
       height: 40px;
       min-height: 40px;
-      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
-      box-shadow: 0 1px 4px var(--box-shadow-color);
+      box-shadow: 0 1px 4px var(--shadow-sm);
 
       >* {
         position: relative;
@@ -270,8 +266,7 @@ wc-page {
         left: 0;
         height: 2px;
         width: 1px;
-        background-color: rgb(51, 153, 255);
-        background-color: var(--active-color);
+        background-color: var(--cf-blue);
         transform-origin: left center;
         z-index: 1;
       }
@@ -404,7 +399,7 @@ wc-page {
       &::after {
         content: attr(data-empty-msg);
         font-weight: 900;
-        color: rgb(153, 153, 153);
+        color: var(--text-secondary);
         height: fit-content;
         max-width: 60vw;
         margin: auto;
@@ -420,12 +415,10 @@ wc-page {
     left: 0;
     width: 100%;
     z-index: 98;
-    background-color: rgb(153, 153, 255);
-    background-color: var(--primary-color);
+    background-color: var(--bg-base);
     padding: 0 1px;
     box-sizing: border-box;
-    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);
-    box-shadow: 0 -2px 4px var(--box-shadow-color);
+    box-shadow: 0 -2px 4px var(--shadow-sm);
 
     .icon {
       border-radius: 0;
@@ -450,8 +443,7 @@ wc-page {
     .navigation {
       display: flex;
       height: 30px;
-      border-bottom: solid 1px rgba(122, 122, 122, 0.227);
-      border-bottom: solid 1px var(--border-color);
+      border-bottom: solid 1px var(--border-color-cf);
       box-sizing: border-box;
       overflow-x: auto;
 
