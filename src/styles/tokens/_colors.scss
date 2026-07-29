@@ -1,0 +1,45 @@
+// ============================================================
+// CF Code — Color Tokens
+// ============================================================
+
+:root {
+  // Brand
+  --cf-blue:            #0055CC;
+  --cf-orange:          #FFB454;
+  --cf-grey:            #ADADAD;
+
+  // Background
+  --bg-base:            #222222;
+  --bg-darker:          #1F1F1F;
+  --bg-lighter:         #383838;
+
+  // Surface
+  --surface-color:      #1F1F1F;
+  --surface-raised:     #2A2A2A;
+  --surface-overlay:    #383838;
+
+  // Container
+  --container-bg:       #222222;
+  --container-border:   #3F3F3F;
+
+  // Border
+  --border-color-cf:    #3F3F3F;
+  --border-focus:       #0055CC;
+
+  // Text
+  --text-primary:       #D4D4D4;
+  --text-secondary:     #9D9D9D;
+  --text-disabled:      #6B6B6B;
+  --text-inverse:       #FFFFFF;
+  --title-color:        #FFFFFF;
+
+  // Status
+  --color-error:        #F44747;
+  --color-warning:      #FFB454;
+  --color-success:      #4EC994;
+  --color-info:         #0055CC;
+
+  // Overlay
+  --overlay-bg:         rgba(0, 0, 0, 0.6);
+  --overlay-light:      rgba(255, 255, 255, 0.08);
+}

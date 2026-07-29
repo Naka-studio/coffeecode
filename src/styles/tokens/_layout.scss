@@ -1,0 +1,29 @@
+// ============================================================
+// CF Code — Layout Tokens
+// ============================================================
+
+:root {
+  // Header
+  --header-height:      48px;
+
+  // Sidebar
+  --sidebar-width:      52px;
+  --sidebar-panel-min:  250px;
+  --sidebar-panel-max:  350px;
+
+  // Panel
+  --panel-height:       200px;
+
+  // Statusbar
+  --statusbar-height:   24px;
+
+  // Scrollbar
+  --scrollbar-width:    4px;
+  --scrollbar-radius:   2px;
+
+  // Z-index
+  --z-sidebar:          109;
+  --z-header:           100;
+  --z-modal:            1000;
+  --z-toast:            9999;
+}

@@ -1,0 +1,11 @@
+// ============================================================
+// CF Code — Global
+// ============================================================
+
+body {
+  user-select: none;
+  font-family: var(--font-ui);
+  -webkit-tap-highlight-color: transparent;
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+}

@@ -1,0 +1,34 @@
+// ============================================================
+// CF Code — Typography Tokens
+// ============================================================
+
+:root {
+  // Font Family
+  --font-ui:            "Inter", sans-serif;
+  --font-code:          "Fira Code", monospace;
+  --font-heading:       "Cascadia Code", monospace;
+
+  // Font Size
+  --text-h1:            24px;
+  --text-h2:            20px;
+  --text-h3:            16px;
+  --text-h4:            14px;
+  --text-body:          14px;
+  --text-caption:       12px;
+  --text-code:          13px;
+
+  // Font Weight
+  --weight-regular:     400;
+  --weight-medium:      500;
+  --weight-semibold:    600;
+  --weight-bold:        700;
+
+  // Line Height
+  --lh-h1:              1.3;
+  --lh-h2:              1.4;
+  --lh-h3:              1.4;
+  --lh-h4:              1.5;
+  --lh-body:            1.6;
+  --lh-caption:         1.5;
+  --lh-code:            1.7;
+}

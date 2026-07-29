@@ -1,0 +1,27 @@
+// ============================================================
+// CF Code — Effects Tokens
+// ============================================================
+
+:root {
+  // Shadow
+  --shadow-sm:          0 1px 4px rgba(0, 0, 0, 0.3);
+  --shadow-md:          0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-lg:          0 8px 24px rgba(0, 0, 0, 0.5);
+  --shadow-xl:          0 16px 40px rgba(0, 0, 0, 0.6);
+
+  // Transition
+  --transition-fast:    0.15s ease;
+  --transition-base:    0.2s ease;
+  --transition-slow:    0.3s ease;
+  --transition-spring:  0.2s cubic-bezier(0.4, 0, 0.2, 1);
+
+  // Blur
+  --blur-sm:            4px;
+  --blur-md:            8px;
+  --blur-lg:            16px;
+
+  // Opacity
+  --opacity-disabled:   0.4;
+  --opacity-muted:      0.6;
+  --opacity-hover:      0.85;
+}
