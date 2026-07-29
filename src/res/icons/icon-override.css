@@ -27,7 +27,7 @@
 }
 
 .icon.bayanaka::before,
-.icon.nakaStudio::before{
+.icon.naka-studio::before{
 	font-family: "cfcode-icons" !important;
 	content: '\f010';
 }
@@ -54,6 +54,11 @@
 .icon.cfcode-fill::before{
 	font-family: "cfcode-icons" !important;
 	content: '\f00c';
+}
+
+.icon.cfcode-outline::before{
+  font-family: "cfcode-icons";
+	content: '\f000';
 }
 
 .icon.color_lenspalette::before,
@@ -384,7 +389,7 @@
 
 .icon.googlechrome::before{
   font-family: "cfcode-icons" !important;
-  content: '\f00d';
+  content: '\f00b';
 }
 
 .icon.house::before{
