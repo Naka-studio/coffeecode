@@ -62,7 +62,7 @@ function renderError(container, icon, title, message) {
 function renderDashboard(container, folderUrl) {
   container.innerHTML = "";
 
-  const $projectName = <span>{folderUrl.split("/").pop() || "—"}</span>;
+  const $projectName = <span>{projectName}</span>;
   const $branchName = <span>—</span>;
   const $changesCount = <span></span>;
   const $fileList = <div className="sc-file-list"></div>;
@@ -135,9 +135,9 @@ async function init(container) {
     $wrapper.innerHTML = "";
 
     // Step 1: cek folder terbuka
-    const folderUrl = window.addedFolder?.[0]?.url;
-    console.log("DEBUG folderUrl:", folderUrl);
-    console.log("DEBUG addedFolder:", window.addedFolder);
+    const activeFolder = getActiveFolder();
+    const folderUrl = activeFolder?.url;
+    const projectName = activeFolder?.title || folderUrl?.split("/").pop() || "—";
     if (!folderUrl) {
       renderError(
         $wrapper,
@@ -184,7 +184,7 @@ async function init(container) {
     }
 
     // Step 5: render dashboard
-    renderDashboard($wrapper, folderUrl);
+    renderDashboard($wrapper, folderUrl, projectName);
   }
 
   // Auto refresh listeners
