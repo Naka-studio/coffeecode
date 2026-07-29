@@ -8,7 +8,7 @@
     .file-name {
       font-size: 1.25rem;
       font-weight: 500;
-      color: var(--popup-text-color);
+      color: var(--text-primary);
       display: flex;
       align-items: center;
       gap: 0.5rem;
@@ -27,19 +27,19 @@
           word-break: break-all;
           z-index: 1;
           border-radius: 4px;
-          background: var(--popup-background-color);
+          background: var(--popup-bg);
         }
       }
       .file-extension {
         background: color-mix(
           in srgb,
-          var(--button-background-color) 40%,
+          var(--cf-blue) 40%,
           transparent
         );
         padding: 0.25rem 0.5rem;
         border-radius: 4px;
         font-size: 0.875rem;
-        color: var(--active-color);
+        color: var(--cf-blue);
         font-weight: 600;
         letter-spacing: 0.5px;
         text-transform: uppercase;
@@ -61,14 +61,14 @@
 
     .info-label {
       font-size: 0.875rem;
-      color: color-mix(in srgb, var(--popup-text-color) 60%, transparent);
+      color: color-mix(in srgb, var(--text-primary) 60%, transparent);
       text-transform: uppercase;
       letter-spacing: 0.5px;
     }
 
     .info-value {
       font-size: 1rem;
-      color: var(--popup-text-color);
+      color: var(--text-primary);
       font-weight: 500;
     }
   }
