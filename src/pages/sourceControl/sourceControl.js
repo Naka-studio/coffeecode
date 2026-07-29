@@ -2,6 +2,7 @@ import "./style.scss";
 import Page from "components/page";
 import Url from "utils/Url";
 import fsOperation from "fileSystem";
+import actionStack from "lib/actionStack";
 
 export default function SourceControlPage() {
   const $page = Page("Source Control");
@@ -14,8 +15,10 @@ export default function SourceControlPage() {
         <div className="sc-page-empty">
           <span className="codicon codicon-source-control sc-page-empty-icon" />
           <div className="sc-page-empty-title">No Folder Opened</div>
-          <div className="sc-page-empty-msg">Open a folder to use Source Control.</div>
-        </div>
+          <div className="sc-page-empty-msg">
+            Open a folder to use Source Control.
+          </div>
+        </div>,
       );
       return;
     }
@@ -27,11 +30,13 @@ export default function SourceControlPage() {
         <div className="sc-page-empty">
           <span className="codicon codicon-git-commit sc-page-empty-icon" />
           <div className="sc-page-empty-title">Not a Git Repository</div>
-          <div className="sc-page-empty-msg">Initialize a git repository to get started.</div>
+          <div className="sc-page-empty-msg">
+            Initialize a git repository to get started.
+          </div>
           <button className="sc-page-btn-primary" onclick={() => {}}>
             Initialize Repository
           </button>
-        </div>
+        </div>,
       );
       return;
     }
@@ -42,7 +47,7 @@ export default function SourceControlPage() {
   async function checkGitRepo(folderUrl) {
     try {
       const entries = await fsOperation(folderUrl).lsDir();
-      return entries.some(e => e.name === ".git");
+      return entries.some((e) => e.name === ".git");
     } catch {
       return false;
     }
@@ -53,7 +58,6 @@ export default function SourceControlPage() {
 
     $page.append(
       <div className="sc-page">
-
         {/* Header info */}
         <div className="sc-page-section">
           <div className="sc-page-label">Project</div>
@@ -97,8 +101,10 @@ export default function SourceControlPage() {
           <div className="sc-page-label">Sync</div>
           <div className="sc-page-sync">
             <div className="sc-page-sync-status">
-              <span className="codicon codicon-arrow-up" /> <span id="sc-ahead">0</span>
-              <span className="codicon codicon-arrow-down" /> <span id="sc-behind">0</span>
+              <span className="codicon codicon-arrow-up" />{" "}
+              <span id="sc-ahead">0</span>
+              <span className="codicon codicon-arrow-down" />{" "}
+              <span id="sc-behind">0</span>
             </div>
             <div className="sc-page-sync-actions">
               <button className="sc-page-btn-primary" onclick={() => {}}>
@@ -143,11 +149,19 @@ export default function SourceControlPage() {
             <span className="codicon codicon-remote" /> Manage Remote
           </button>
         </div>
-
-      </div>
+      </div>,
     );
   }
 
   init();
+
+  actionStack.push({
+    id: "source-control",
+    action() {
+      actionStack.remove("source-control");
+      $page.remove();
+    },
+  });
+  app.append($page);
   return $page;
 }
