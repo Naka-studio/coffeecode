@@ -127,6 +127,21 @@ function renderDashboard(container, folderUrl) {
 // ============================================================
 // Main init
 // ============================================================
+function getActiveFolder() {
+  const activeFile = window.editorManager?.activeFile;
+  const uri = activeFile?.uri;
+  
+  if (!uri) return window.addedFolder?.[0] || null;
+  
+  for (const folder of window.addedFolder || []) {
+    if (typeof folder?.url === "string" && uri.startsWith(folder.url)) {
+      return folder;
+    }
+  }
+  
+  return window.addedFolder?.[0] || null;
+}
+
 async function init(container) {
   const $wrapper = <div className="source-control-sidebar" />;
   container.append($wrapper);
