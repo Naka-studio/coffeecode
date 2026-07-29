@@ -8,21 +8,21 @@ c-toggler {
   left: 0;
   height: 30px;
   width: 30px;
-  background-color: #fff;
+  background-color: var(--text-inverse);
   transform-origin: center;
   border-radius: 50%;
-  box-shadow: -2px 2px 8px rgba(0, 0, 0, .4);
+  box-shadow: var(--shadow-float);
   z-index: 99999;
   opacity: 0.5;
 }
 
 c-object {
-  color: #9999ff;
+  color: var(--cf-blue);
   text-decoration: underline;
 }
 
 c-toggler:active {
-  box-shadow: -1px 1px 4px rgba(0, 0, 0, .4)
+  box-shadow: var(--shadow-float-sm);
 }
 
 c-line {
@@ -37,9 +37,9 @@ c-console {
   left: 0;
   height: 100vh;
   width: 100vw;
-  background-color: #313131;
+  background-color: var(--bg-lighter);
   z-index: 99998;
-  color: #eeeeee;
+  color: var(--text-primary);
   font-family: var(--app-font-family);
 }
 
@@ -53,7 +53,7 @@ c-console br:last-of-type {
 }
 
 c-console textarea {
-  color: white;
+  color: var(--text-inverse);
   caret-color: currentColor !important;
   background-color: inherit;
 }
@@ -96,9 +96,9 @@ c-console[title]::before {
   height: 44px;
   align-items: center;
   justify-content: center;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: var(--font-code);
   font-weight: 900;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+  box-shadow: var(--shadow-sm);
   margin-bottom: 10px;
   color: white;
   font-size: medium;
@@ -107,7 +107,7 @@ c-console[title]::before {
 c-message {
   position: relative;
   display: flex;
-  border-bottom: solid 1px rgba(204, 204, 204, 0.4);
+  border-bottom: solid 1px var(--border-color-cf);
   margin-bottom: 35px;
   font-size: .9rem;
   flex-wrap: wrap;
@@ -115,9 +115,9 @@ c-message {
 
 c-code {
   position: relative;
-  color: rgb(214, 211, 211);
+  color: var(--text-primary);
   font-size: 1em;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: var(--font-code);
   overflow-x: auto;
   white-space: pre;
   margin-bottom: 0px;
@@ -126,7 +126,7 @@ c-code {
 
 c-code::after {
   content: 'use';
-  background-color: #666;
+  background-color: var(--text-secondary);
   color: inherit;
   border-radius: 4px;
   padding: 0 0.4rem;
@@ -141,34 +141,34 @@ c-code::before {
 
 c-key {
   font-size: 0.9rem;
-  color: #cc66ff;
+  color: var(--color-info);
 }
 
 c-message[log-level=error] {
-  border-bottom: solid 1px rgba(255, 255, 255, 0.4);
-  background-color: #422;
+  border-bottom: solid 1px var(--border-color-cf);
+  background-color: var(--surface-raised);
   color: inherit;
 }
 
 c-message[log-level=error]::after {
-  background-color: #cc4343;
+  background-color: var(--color-error);
   color: inherit
 }
 
 c-message[log-level=warn] {
-  border-bottom: solid 1px rgba(255, 255, 255, 0.4);
-  background-color: #633;
+  border-bottom: solid 1px var(--border-color-cf);
+  background-color: var(--surface-raised);
   color: inherit;
 }
 
 c-message[log-level=warn]::after {
-  background-color: #cc6969;
+  background-color: var(--color-error);
   color: inherit
 }
 
 c-stack:not(:empty) {
   content: attr(data-stack);
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: var(--font-code);
   position: absolute;
   top: 100%;
   right: 0;
@@ -187,7 +187,7 @@ c-stack:not(:empty) {
 c-text {
   padding: 2px;
   white-space: pre;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: var(--font-code);
   overflow: auto;
   box-sizing: border-box;
   max-width: 100vw;
@@ -198,20 +198,20 @@ c-text {
 }
 
 c-text.__c-boolean {
-  color: rgb(130, 80, 177);
+  color: var(--text-secondary);
 }
 
 c-text.__c-number {
-  color: rgb(97, 88, 221);
+  color: var(--text-secondary);
 }
 
 c-text.__c-symbol {
-  color: rgb(111, 89, 172);
+  color: var(--text-secondary);
 }
 
 c-text.__c-function {
-  color: rgb(145, 136, 168);
-  font-family: 'Courier New', Courier, monospace;
+  color: var(--text-secondary);
+  font-family: var(--font-code);
   font-size: 0.9rem;
 }
 
@@ -219,16 +219,16 @@ c-text.__c-function::before {
   content: 'ƒ';
   margin: 0 2px;
   font-style: italic;
-  color: #9999ff;
+  color: var(--cf-blue);
 }
 
 c-text.__c-object,
 c-text.__c-undefined {
-  color: rgb(118, 163, 118);
+  color: var(--text-success);
 }
 
 c-text.__c-string {
-  color: rgb(59, 161, 59);
+  color: var(--text-success);
 }
 
 c-text.__c-string:not(.no-quotes)::before {
@@ -245,7 +245,7 @@ c-message.error c-text {
   overflow: unset;
   white-space: pre-wrap;
   word-break: break-word;
-  color: white;
+  color: var(--text-inverse);
 }
 
 c-group {
@@ -281,13 +281,13 @@ c-table {
   border-collapse: collapse;
   border-spacing: 0;
   font-size: 0.9rem;
-  color: rgb(214, 211, 211);
-  border: solid 1px rgba(204, 204, 204, 0.4);
+  color: var(--text-primary);
+  border: solid 1px var(--border-color-cf);
 }
 
 c-table c-row {
   display: table-row;
-  border-bottom: solid 1px rgba(204, 204, 204, 0.4);
+  border-bottom: solid 1px var(--border-color-cf);
 }
 
 c-table c-row:last-child {
@@ -301,11 +301,11 @@ c-table c-row:first-child {
 c-table c-cell {
   display: table-cell;
   padding: 5px;
-  border-bottom: solid 1px rgba(204, 204, 204, 0.4);
+  border-bottom: solid 1px var(--border-color-cf);
 }
 
 c-table c-cell:not(:last-child) {
-  border-left: solid 1px rgba(204, 204, 204, 0.4);
+  border-left: solid 1px var(--border-color-cf);
 }
 
 @keyframes --page-transition {

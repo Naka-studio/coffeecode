@@ -1,6 +1,11 @@
 // ============================================================
 // CF Code — Global
 // ============================================================
+:root {
+  --app-font-family: var(--font-ui);
+  --editor-font-family: var(--font-code);
+  --heading-font-family: var(--font-heading);
+}
 
 body {
   user-select: none;
