@@ -59,7 +59,7 @@ function renderError(container, icon, title, message) {
 // ============================================================
 // Render dashboard normal
 // ============================================================
-function renderDashboard(container, folderUrl) {
+function renderDashboard(container, folderUrl, projectName) {
   container.innerHTML = "";
 
   const $projectName = <span>{projectName}</span>;
@@ -130,15 +130,15 @@ function renderDashboard(container, folderUrl) {
 function getActiveFolder() {
   const activeFile = window.editorManager?.activeFile;
   const uri = activeFile?.uri;
-  
+
   if (!uri) return window.addedFolder?.[0] || null;
-  
+
   for (const folder of window.addedFolder || []) {
     if (typeof folder?.url === "string" && uri.startsWith(folder.url)) {
       return folder;
     }
   }
-  
+
   return window.addedFolder?.[0] || null;
 }
 
@@ -149,10 +149,12 @@ async function init(container) {
   async function refresh() {
     $wrapper.innerHTML = "";
 
-    // Step 1: cek folder terbuka
+    // Step 1 - cek file/folder active
     const activeFolder = getActiveFolder();
     const folderUrl = activeFolder?.url;
-    const projectName = activeFolder?.title || folderUrl?.split("/").pop() || "—";
+    const projectName =
+      activeFolder?.title || folderUrl?.split("/").pop() || "—";
+    console.log("SC Step 1 - folderUrl:", folderUrl);
     if (!folderUrl) {
       renderError(
         $wrapper,
@@ -163,7 +165,8 @@ async function init(container) {
       return;
     }
 
-    // Step 2: cek login (placeholder)
+    // Step 2 - cek apakah user sudah login/belom
+    console.log("SC Step 2 - checking login");
     if (!isUserLoggedIn()) {
       renderError(
         $wrapper,
@@ -174,31 +177,53 @@ async function init(container) {
       return;
     }
 
-    // Step 3: cek git repo
-    const isRepo = await checkGitRepo(folderUrl);
-    if (!isRepo) {
+    // Step 3 - cek ada git atau tidak
+    console.log("SC Step 3 - checking git repo");
+    try {
+      const isRepo = await checkGitRepo(folderUrl);
+      console.log("SC Step 3 - isRepo:", isRepo);
+      if (!isRepo) {
+        renderError(
+          $wrapper,
+          "codicon-git-commit",
+          "Not a Git Repository",
+          "This folder is not a git repository.",
+        );
+        return;
+      }
+    } catch (e) {
+      console.log("SC Step 3 - error:", e.message);
+      renderError($wrapper, "codicon-warning", "Error checking git", e.message);
+      return;
+    }
+
+    // Step 4 - Check Ada git Remote / tidak
+    console.log("SC Step 4 - checking remote");
+    try {
+      const hasRemote = await checkGitRemote(folderUrl);
+      console.log("SC Step 4 - hasRemote:", hasRemote);
+      if (!hasRemote) {
+        renderError(
+          $wrapper,
+          "codicon-remote",
+          "No Remote Repository",
+          "No remote repository found.",
+        );
+        return;
+      }
+    } catch (e) {
+      console.log("SC Step 4 - error:", e.message);
       renderError(
         $wrapper,
-        "codicon-git-commit",
-        "Not a Git Repository",
-        "This folder is not a git repository. Initialize one in Source Control Page.",
+        "codicon-warning",
+        "Error checking remote",
+        e.message,
       );
       return;
     }
 
-    // Step 4: cek git remote
-    const hasRemote = await checkGitRemote(folderUrl);
-    if (!hasRemote) {
-      renderError(
-        $wrapper,
-        "codicon-remote",
-        "No Remote Repository",
-        "No remote repository found. Add one in Source Control Page.",
-      );
-      return;
-    }
-
-    // Step 5: render dashboard
+    // Step 5 - Render Dashboard
+    console.log("SC Step 5 - rendering dashboard");
     renderDashboard($wrapper, folderUrl, projectName);
   }
 
