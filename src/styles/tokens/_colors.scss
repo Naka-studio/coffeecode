@@ -38,7 +38,10 @@
   --title-color:        #FFFFFF;
 
   // Status
-  --color-error:        #F44747;
+  --active-color:       #0055CC;
+	--active-icon-color:  rgba(0, 85, 204, 0.8);
+	--active-text-color:  #FFFFFF;
+	--color-error:        #F44747;
   --color-warning:      #FFB454;
   --color-success:      #4EC994;
   --color-info:         #0055CC;
@@ -46,4 +49,7 @@
   // Overlay
   --overlay-bg:         rgba(0, 0, 0, 0.6);
   --overlay-light:      rgba(255, 255, 255, 0.08);
+
+	// Another Support Color
+	--color-gold:     		#ffda0c;
 }
