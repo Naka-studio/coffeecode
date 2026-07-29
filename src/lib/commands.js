@@ -343,6 +343,10 @@ export default {
 				(await import(/* webpackChunkName: "about" */ "pages/about")).default();
 				break;
 
+      case "source-control":
+        (await import(/* webpackChunkName: "sourceControl" */ "pages/sourceControl")).default();
+        break;
+
 			default:
 				return;
 		}

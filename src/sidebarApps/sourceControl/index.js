@@ -39,18 +39,22 @@ async function checkGitRemote(folderUrl) {
 // ============================================================
 // Render error state
 // ============================================================
-function renderError(container, icon, title, message) {
+function renderError(
+  container,
+  icon,
+  title,
+  message,
+  btnText = "Open Source Control",
+  btnAction = () => acode.exec("open", "source-control"),
+) {
   container.innerHTML = "";
   container.append(
     <div className="sc-error-state">
       <span className={`codicon ${icon} sc-error-icon`} />
       <div className="sc-error-title">{title}</div>
       <div className="sc-error-message">{message}</div>
-      <button
-        className="sc-open-btn"
-        onclick={() => acode.exec("open-source-control")}
-      >
-        Open Source Control
+      <button className="sc-open-btn" onclick={btnAction}>
+        {btnText}
       </button>
     </div>,
   );
@@ -115,7 +119,7 @@ function renderDashboard(container, folderUrl, projectName) {
         </div>
         <button
           className="sc-open-btn"
-          onclick={() => acode.exec("open-source-control")}
+          onclick={() => acode.exec("open", "source-control")}
         >
           Open Source Control
         </button>
@@ -155,12 +159,15 @@ async function init(container) {
     const projectName =
       activeFolder?.title || folderUrl?.split("/").pop() || "—";
     console.log("SC Step 1 - folderUrl:", folderUrl);
+    // No folder — tombol Open Folder
     if (!folderUrl) {
       renderError(
         $wrapper,
         "codicon-folder-opened",
         "No Folder Opened",
         "Open a folder first to use Source Control.",
+        "Open Folder",
+        () => acode.exec("open-folder"),
       );
       return;
     }
