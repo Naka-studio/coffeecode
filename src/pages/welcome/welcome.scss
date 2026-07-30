@@ -14,27 +14,27 @@
   .welcome-header {
     display: flex;
     align-items: center;
-    gap: 16px;
-    margin-bottom: 48px;
+    gap: var(--space-4);
+    margin-bottom: var(--space-12);
 
     .logo {
-      width: 48px;
+      width: 64px;
+      height: 64px;
       height: auto;
-      max-height: 48px;
       flex-shrink: 0;
     }
 
     .welcome-header-text {
       h1 {
-        font-size: 20px;
-        font-weight: 600;
-        color: var(--primary-text-color);
+        font-size: var(--text-h1);
+        font-weight: var(--weight-semibold);
+        color: var(--text-primary);
         margin: 0 0 4px 0;
-        letter-spacing: -0.3px;
+        letter-spacing: var(--spacing-Mm);
       }
 
       .tagline {
-        font-size: 13px;
+        font-size: var(--text-code);
         color: color-mix(in srgb, var(--secondary-text-color) 60%, transparent);
         margin: 0;
       }
@@ -45,15 +45,15 @@
   .welcome-section {
     width: 100%;
     max-width: 400px;
-    margin-bottom: 32px;
+    margin-bottom: var(--space-8);
 
     .section-label {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 1px;
-      color: color-mix(in srgb, var(--secondary-text-color) 50%, transparent);
+      font-size: var(--text-caption);
+      font-weight: var(--weight-semibold);
+      letter-spacing: var(--spacing-regular);
+      color: color-mix(in srgb, var(--text-secondary) 50%, transparent);
       margin: 0 0 12px 0;
-      padding-left: 4px;
+      padding-left: var(--space-1);
     }
   }
 
@@ -67,9 +67,9 @@
   .action-row {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: var(--space-3);
     padding: 10px 12px;
-    border-radius: 6px;
+    border-radius: var(--radius-md);
     cursor: pointer;
     transition: background-color 0.15s ease;
 
@@ -77,75 +77,75 @@
     &:active {
       background-color: color-mix(
         in srgb,
-        var(--popup-background-color) 40%,
+        var(--popup-bg) 40%,
         transparent
       );
     }
 
     .icon {
-      font-size: 16px;
-      color: color-mix(in srgb, var(--secondary-text-color) 70%, transparent);
+      font-size: var(--text-h3);
+      color: color-mix(in srgb, var(--text-secondary) 70%, transparent);
       width: 20px;
       text-align: center;
     }
 
     .action-label {
       flex: 1;
-      font-size: 14px;
-      color: var(--secondary-text-color);
+      font-size: var(--text-h4);
+      color: var(--text-secondary);
     }
 
     .action-shortcut {
       font-size: 12px;
-      font-family: "Roboto Mono", monospace;
-      color: color-mix(in srgb, var(--secondary-text-color) 40%, transparent);
-      letter-spacing: 0.5px;
+      font-family: var(--font-code);
+      color: color-mix(in srgb, var(--text-secondary) 40%, transparent);
+      letter-spacing: var(--spacing-regular);
     }
   }
 
   // Links Section
   .welcome-links {
-    margin-top: 16px;
+    margin-top: var(--space-4);
 
     .link-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
+      gap: var(--space-2);
       justify-content: flex-start;
     }
 
     .link-item {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      gap: var(--space-2);
       padding: 10px 16px;
-      border-radius: 8px;
+      border-radius: var(--radius-md);
       text-decoration: none;
-      color: var(--secondary-text-color);
-      font-size: 13px;
-      font-weight: 500;
+      color: var(--text-secondary);
+      font-size: var(--text-code);
+      font-weight: var(--weight-medium);
       transition: all 0.15s ease;
       background-color: color-mix(
         in srgb,
-        var(--popup-background-color) 25%,
+        var(--popup-bg) 25%,
         transparent
       );
-      border: 1px solid color-mix(in srgb, var(--border-color) 20%, transparent);
+      border: 1px solid color-mix(in srgb, var(--border-color-cf) 20%, transparent);
 
       &:hover,
       &:active {
         background-color: color-mix(
           in srgb,
-          var(--popup-background-color) 50%,
+          var(--popup-bg) 50%,
           transparent
         );
-        border-color: color-mix(in srgb, var(--border-color) 40%, transparent);
+        border-color: color-mix(in srgb, var(--border-color-cf) 40%, transparent);
         transform: translateY(-1px);
       }
 
       .icon {
-        font-size: 16px;
-        color: color-mix(in srgb, var(--secondary-text-color) 80%, transparent);
+        font-size: var(--text-h3);
+        color: color-mix(in srgb, var(--text-secondary) 80%, transparent);
       }
     }
   }
