@@ -50,6 +50,14 @@
   --overlay-bg:         rgba(0, 0, 0, 0.6);
   --overlay-light:      rgba(255, 255, 255, 0.08);
 
+	// Markdown Renderer
+	--md-note:      			#2f81f7;
+	--md-tip:       			#3fb950;
+	--md-warning:   			#d29922;
+	--md-severe:    			#db6d28;
+	--md-caution:   			#f85149;
+	--md-important: 			#a371f7;
+
 	// Another Support Color
 	--color-gold:     		#ffda0c;
 }
